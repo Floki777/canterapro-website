@@ -211,4 +211,13 @@ const base = import.meta.env.BASE_URL;
       flex-direction: column;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    .hero {
+      background: linear-gradient(180deg, var(--color-surface-50) 0%, var(--color-surface-0) 100%);
+    }
+    .price-teaser__amount {
+      color: var(--color-primary-100);
+    }
+  }
 </style>

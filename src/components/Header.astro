@@ -130,4 +130,17 @@ const labels = NAV_LABELS[lang];
       display: flex;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    .brand {
+      color: var(--color-primary-100);
+    }
+    .site-nav a:hover,
+    .site-nav a[aria-current='page'] {
+      color: var(--color-primary-400);
+    }
+    .nav-toggle-label {
+      color: var(--color-primary-100);
+    }
+  }
 </style>

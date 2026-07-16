@@ -276,4 +276,17 @@ const rows = [
     background: var(--color-earth-100);
     color: var(--color-earth-700);
   }
+
+  @media (prefers-color-scheme: dark) {
+    .pricing-card__amount,
+    .founding-tier__price {
+      color: var(--color-primary-100);
+    }
+    .comparison-table td :global(.icon) {
+      color: var(--color-primary-400);
+    }
+    .founding-tier__progress {
+      background: var(--color-surface-100);
+    }
+  }
 </style>

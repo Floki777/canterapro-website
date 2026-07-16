@@ -53,4 +53,14 @@ const { heading, subheading, primaryLabel, primaryHref, secondaryLabel, secondar
     justify-content: center;
     margin-top: var(--space-5);
   }
+  /* The CTA panel is always a dark green surface (light or dark site theme),
+     so its outline button needs its own always-light styling rather than
+     the default .btn--outline, which assumes a light page behind it. */
+  .cta :global(.btn--outline) {
+    border-color: rgba(255, 255, 255, 0.55);
+    color: #fff;
+  }
+  .cta :global(.btn--outline:hover) {
+    background: rgba(255, 255, 255, 0.12);
+  }
 </style>

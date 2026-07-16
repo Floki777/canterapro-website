@@ -88,8 +88,6 @@
     --color-ink-700: #d3ddd7;
     --color-ink-500: #a9b7b0;
     --color-ink-300: #7c8b83;
-    --color-primary-50: #16261f;
-    --color-primary-100: #1c3327;
     --color-page-bg: #0e1a14;
   }
 }
@@ -142,6 +140,11 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--color-primary-400);
+  }
 }
 
 h1,
@@ -328,6 +331,15 @@ button {
 .btn--outline:hover {
   background: var(--color-primary-50);
 }
+@media (prefers-color-scheme: dark) {
+  .btn--outline {
+    border-color: var(--color-primary-400);
+    color: var(--color-primary-400);
+  }
+  .btn--outline:hover {
+    background: rgba(79, 160, 111, 0.12);
+  }
+}
 
 .btn--sm {
   padding: 0.5em 1em;
@@ -355,6 +367,12 @@ button {
   padding: 0.3em 0.75em;
   border-radius: 999px;
 }
+@media (prefers-color-scheme: dark) {
+  .badge {
+    background: rgba(79, 160, 111, 0.18);
+    color: var(--color-primary-100);
+  }
+}
 
 .eyebrow {
   color: var(--color-accent-600);
@@ -364,6 +382,11 @@ button {
   font-size: var(--fs-xs);
   margin-bottom: var(--space-2);
   display: block;
+}
+@media (prefers-color-scheme: dark) {
+  .eyebrow {
+    color: var(--color-accent-500);
+  }
 }
 
 .feature-icon {
@@ -376,6 +399,12 @@ button {
   background: var(--color-primary-100);
   color: var(--color-primary-700);
   margin-bottom: var(--space-3);
+}
+@media (prefers-color-scheme: dark) {
+  .feature-icon {
+    background: rgba(79, 160, 111, 0.18);
+    color: var(--color-primary-400);
+  }
 }
 
 .callout {
