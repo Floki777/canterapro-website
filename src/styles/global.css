@@ -30,12 +30,22 @@
   --color-ink-300: #a3ada6;
 
   --color-surface-0: #ffffff;
-  --color-surface-50: #f7faf8;
-  --color-surface-100: #edf3ee;
+  --color-surface-50: #eef6f0;
+  --color-surface-100: #e3f0e7;
   --color-border: #dde6e0;
 
   --color-success: #2a6e47;
   --color-warning: #c67b1a;
+
+  /* Soft green wash behind the page (body background), instead of flat
+     white — layered with the radial tints below in the `body` rule. */
+  --color-page-bg: #f1f7f2;
+
+  /* Subtle grass-blade silhouette, used as a bottom-anchored background
+     accent on hero/page-header sections. Swap this data URI to change the
+     motif everywhere it's used at once. Generated as a flat SVG of two-tone
+     blades at low opacity — see the note in `.page-hero` below for where. */
+  --bg-grass-line: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PHBhdGggZD0iTS0xMCwxMDAgUS0xMSw3OCAtMTAsNjAgUS02LDc4IC00LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik0xMSwxMDAgUTEyLDg4IDE3LDc5IFEyMiw4OCAyMSwxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNMzIsMTAwIFEzMCw3MyAzMSw1MSBRMzksNzMgNDEsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTU0LDEwMCBRNTQsNzUgNTcsNTUgUTYwLDc1IDYwLDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik03NSwxMDAgUTc4LDg5IDg2LDgwIFE4OCw4OSA4NiwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNOTEsMTAwIFE5MSw2OSA5Myw0NCBROTcsNjkgOTgsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTExNCwxMDAgUTExNyw4NCAxMjMsNzEgUTEyMyw4NCAxMjAsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNMTM1LDEwMCBRMTM0LDc4IDEzNSw2MCBRMTQxLDc4IDE0MiwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNMTYyLDEwMCBRMTY0LDgyIDE3MCw2OCBRMTY5LDgyIDE2NywxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNMTc5LDEwMCBRMTgwLDgwIDE4NCw2MyBRMTg2LDgwIDE4NiwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0yMDAsMTAwIFExOTksNzYgMjAwLDU2IFEyMDQsNzYgMjA2LDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTIyMSwxMDAgUTIyMiw4OSAyMjcsODAgUTIyOSw4OSAyMjksMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTI0NSwxMDAgUTI0NSw4MyAyNDksNjkgUTI1Myw4MyAyNTMsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNMjY2LDEwMCBRMjY1LDgwIDI2Nyw2NCBRMjczLDgwIDI3NCwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0yODQsMTAwIFEyODYsODcgMjkxLDc3IFEyOTIsODcgMjkxLDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTMxMiwxMDAgUTMxMyw3MCAzMjAsNDUgUTMyMyw3MCAzMjIsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNMzM2LDEwMCBRMzM2LDkwIDMzOCw4MSBRMzQzLDkwIDM0MywxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNMzU0LDEwMCBRMzUzLDc1IDM1Niw1NSBRMzYyLDc1IDM2MywxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNMzgzLDEwMCBRMzgzLDgyIDM4Nyw2OCBRMzkxLDgyIDM5MiwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNMzk4LDEwMCBRMzk5LDgwIDQwNSw2NCBRNDA5LDgwIDQwOSwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik00MjAsMTAwIFE0MTksNzMgNDIyLDUwIFE0MjksNzMgNDMwLDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik00MzQsMTAwIFE0MzUsNzUgNDQxLDU0IFE0NDQsNzUgNDQ0LDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik00NjIsMTAwIFE0NjAsNzIgNDYwLDQ5IFE0NjYsNzIgNDY4LDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik00NzgsMTAwIFE0NzksNzggNDg3LDYxIFE0ODksNzggNDg4LDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik00OTQsMTAwIFE0OTQsODkgNDk3LDgwIFE1MDEsODkgNTAxLDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik01MDksMTAwIFE1MTAsODUgNTE2LDczIFE1MTcsODUgNTE2LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik01MjUsMTAwIFE1MjMsOTAgNTI1LDgyIFE1MzIsOTAgNTM0LDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik01NDYsMTAwIFE1NDMsODAgNTQzLDYzIFE1NTEsODAgNTUzLDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik01NzIsMTAwIFE1NzQsNzQgNTgwLDUyIFE1ODEsNzQgNTc5LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik01OTcsMTAwIFE1OTUsODQgNTk2LDcxIFE2MDIsODQgNjA0LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik02MjUsMTAwIFE2MjQsODkgNjI2LDc5IFE2MzAsODkgNjMxLDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik02NDAsMTAwIFE2NDAsODAgNjQ0LDY0IFE2NDcsODAgNjQ3LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik02NjgsMTAwIFE2NzAsODEgNjc2LDY1IFE2NzYsODEgNjc0LDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik02OTMsMTAwIFE2OTMsNzAgNjk3LDQ2IFE3MDIsNzAgNzAyLDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik03MjIsMTAwIFE3MjMsODEgNzI5LDY1IFE3MzEsODEgNzMwLDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTc0OSwxMDAgUTc0OSw3OCA3NTYsNjAgUTc2MCw3OCA3NjAsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNNzc2LDEwMCBRNzc2LDg4IDc4Miw3OSBRNzg3LDg4IDc4NywxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNODAxLDEwMCBRODAxLDc0IDgwNSw1MiBRODEwLDc0IDgxMCwxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNODIyLDEwMCBRODIxLDc0IDgyMyw1MyBRODI2LDc0IDgyNywxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik04NDMsMTAwIFE4NDQsNzYgODQ4LDU2IFE4NTAsNzYgODQ5LDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTg2MCwxMDAgUTg1OCw3OCA4NTgsNjEgUTg2NCw3OCA4NjcsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTg4OSwxMDAgUTg4OCw4OSA4ODksODEgUTg5NSw4OSA4OTcsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTkxNCwxMDAgUTkxNiw3NCA5MjIsNTIgUTkyMiw3NCA5MjEsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTkzNywxMDAgUTkzNyw3MiA5MzgsNDkgUTk0Myw3MiA5NDMsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTk1OCwxMDAgUTk1Niw3OCA5NTcsNTkgUTk2Miw3OCA5NjMsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNOTgwLDEwMCBROTc5LDgxIDk4Miw2NiBROTg3LDgxIDk4OCwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNOTk0LDEwMCBROTk0LDc0IDk5OSw1MiBRMTAwMiw3NCAxMDAyLDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik0xMDIzLDEwMCBRMTAyMiw4MSAxMDI0LDY2IFExMDI4LDgxIDEwMjksMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTEwMzcsMTAwIFExMDM1LDc0IDEwMzYsNTMgUTEwNDUsNzQgMTA0NywxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNMTA2MCwxMDAgUTEwNjEsODMgMTA2Niw2OCBRMTA2Nyw4MyAxMDY2LDEwMFoiIGZpbGw9IiMyYTZlNDciIGZpbGwtb3BhY2l0eT0iMC4wOSIvPjxwYXRoIGQ9Ik0xMDgyLDEwMCBRMTA4NCw3NiAxMDkyLDU3IFExMDk0LDc2IDEwOTIsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTExMDIsMTAwIFExMTAwLDcyIDExMDAsNTAgUTExMDcsNzIgMTEwOSwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0xMTE5LDEwMCBRMTEyMSw3NCAxMTI5LDUzIFExMTMwLDc0IDExMjgsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTExMzcsMTAwIFExMTM5LDgzIDExNDUsNjkgUTExNDUsODMgMTE0MywxMDBaIiBmaWxsPSIjNGZhMDZmIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48cGF0aCBkPSJNMTE2MSwxMDAgUTExNjIsNzUgMTE2Niw1NCBRMTE2OCw3NSAxMTY4LDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTExNzcsMTAwIFExMTc3LDY5IDExODAsNDQgUTExODUsNjkgMTE4NiwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0xMTk3LDEwMCBRMTE5Niw3OCAxMTk4LDU5IFExMjAyLDc4IDEyMDMsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTEyMjQsMTAwIFExMjI1LDc4IDEyMjksNjEgUTEyMzMsNzggMTIzMiwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0xMjQ0LDEwMCBRMTI0Niw4NyAxMjUzLDc2IFExMjUzLDg3IDEyNTEsMTAwWiIgZmlsbD0iIzJhNmU0NyIgZmlsbC1vcGFjaXR5PSIwLjA5Ii8+PHBhdGggZD0iTTEyNzAsMTAwIFExMjcwLDgwIDEyNzUsNjQgUTEyODAsODAgMTI4MCwxMDBaIiBmaWxsPSIjMzU4NDU3IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0xMjg2LDEwMCBRMTI4NCw4MyAxMjg2LDY4IFExMjkxLDgzIDEyOTIsMTAwWiIgZmlsbD0iIzM1ODQ1NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48cGF0aCBkPSJNMTMwMCwxMDAgUTEzMDIsODIgMTMxMCw2OCBRMTMxMyw4MiAxMzExLDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik0xMzI0LDEwMCBRMTMyMyw4OSAxMzI0LDgwIFExMzMwLDg5IDEzMzIsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTEzNDYsMTAwIFExMzQ2LDg1IDEzNTEsNzIgUTEzNTQsODUgMTM1NCwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNMTM2MywxMDAgUTEzNjEsNzYgMTM2Myw1NiBRMTM2OSw3NiAxMzcxLDEwMFoiIGZpbGw9IiM0ZmEwNmYiIGZpbGwtb3BhY2l0eT0iMC4xMiIvPjxwYXRoIGQ9Ik0xMzc3LDEwMCBRMTM3OCw4MCAxMzgxLDY0IFExMzgzLDgwIDEzODIsMTAwWiIgZmlsbD0iIzRmYTA2ZiIgZmlsbC1vcGFjaXR5PSIwLjEyIi8+PHBhdGggZD0iTTEzOTMsMTAwIFExMzk0LDgzIDEzOTksNzAgUTE0MDEsODMgMTQwMSwxMDBaIiBmaWxsPSIjMmE2ZTQ3IiBmaWxsLW9wYWNpdHk9IjAuMDkiLz48cGF0aCBkPSJNMTQyMiwxMDAgUTE0MjQsODYgMTQyOSw3NSBRMTQyOSw4NiAxNDI3LDEwMFoiIGZpbGw9IiMzNTg0NTciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+");
 
   /* --- Typography --- */
   --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
@@ -86,6 +96,7 @@
     --color-ink-300: #7c8b83;
     --color-primary-50: #16261f;
     --color-primary-100: #1c3327;
+    --color-page-bg: #0e1a14;
   }
 }
 
@@ -107,8 +118,22 @@ body {
   font-family: var(--font-sans);
   font-size: var(--fs-base);
   color: var(--color-ink-900);
-  background: var(--color-surface-0);
+  /* Soft, mossy variation instead of flat white — a few loose green (and
+     one warm clay) blooms over a light green wash. Cards and content still
+     sit on --color-surface-0 (near-white) so text contrast is untouched. */
+  background-color: var(--color-page-bg);
+  background-image: radial-gradient(at 8% 0%, rgba(53, 132, 87, 0.09) 0px, transparent 50%),
+    radial-gradient(at 92% 8%, rgba(169, 113, 66, 0.06) 0px, transparent 45%),
+    radial-gradient(at 12% 92%, rgba(79, 160, 111, 0.08) 0px, transparent 48%),
+    radial-gradient(at 88% 96%, rgba(53, 132, 87, 0.07) 0px, transparent 50%);
+  background-attachment: fixed;
   line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: none;
+  }
 }
 
 img,
@@ -411,6 +436,39 @@ button {
 }
 .skip-link:focus {
   left: 0;
+}
+
+/* ==========================================================================
+   HERO GRASS ORNAMENT
+   A subtle grass-blade silhouette along the bottom edge of every hero /
+   page-header section (see --bg-grass-line at the top of this file). This
+   uses a pseudo-element layered on top of each section's own background,
+   so it applies everywhere `.hero` or `.page-hero` is used without needing
+   to touch individual page files.
+   ========================================================================== */
+.hero,
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero::after,
+.page-hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  background-image: var(--bg-grass-line);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .hero::after,
+  .page-hero::after {
+    height: 26px;
+  }
 }
 
 /* ==========================================================================
