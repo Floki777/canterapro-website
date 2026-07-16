@@ -1,0 +1,23 @@
+---
+// Small inline Mexican flag badge, shown next to the Spanish language
+// switcher. Plain vertical tricolor (no coat of arms) — the emblem
+// doesn't read cleanly at this size, so we keep it simple.
+interface Props {
+  size?: number;
+  class?: string;
+}
+const { size = 20, class: className = '' } = Astro.props;
+const clipId = `mx-clip-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<svg width={size} height={size * 0.66} viewBox="0 0 24 16" class={`flag-mx ${className}`} role="img" aria-label="Español (México)">
+  <clipPath id={clipId}>
+    <rect x="0.5" y="0.5" width="23" height="15" rx="2.5" />
+  </clipPath>
+  <g clip-path={`url(#${clipId})`}>
+    <rect x="0" y="0" width="8" height="16" fill="#006341" />
+    <rect x="8" y="0" width="8" height="16" fill="#ffffff" />
+    <rect x="16" y="0" width="8" height="16" fill="#ce1126" />
+  </g>
+  <rect x="0.5" y="0.5" width="23" height="15" rx="2.5" fill="none" stroke="rgba(0,0,0,0.18)" />
+</svg>

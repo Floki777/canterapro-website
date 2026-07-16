@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import FlagMX from './FlagMX.astro';
 import { NAV_LABELS } from '../lib/nav.js';
 
 interface Props {
@@ -68,7 +69,7 @@ const t = copy[lang];
         <ul>
           <li>
             <a href={p(otherLang, slug)} hreflang={otherLang}>
-              <Icon name="languages" size={16} />
+              {otherLang === 'es' ? <FlagMX size={18} /> : <Icon name="languages" size={16} />}
               {otherLang === 'en' ? 'English' : 'Español'}
             </a>
           </li>
