@@ -49,7 +49,9 @@ const ogImage = new URL(`${base}og-image.svg`, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon-48.png`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`} />
   </head>
   <body>
     <a href="#main" class="skip-link">{lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}</a>

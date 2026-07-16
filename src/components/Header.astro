@@ -16,7 +16,7 @@ const labels = NAV_LABELS[lang];
 <header class="site-header">
   <div class="container site-header__bar">
     <a href={p(lang, '')} class="brand">
-      <Icon name="leaf" size={26} />
+      <img src={`${base}icon.png`} alt="" width="32" height="32" class="brand-icon" />
       <span>CanteraPro</span>
     </a>
 
@@ -60,6 +60,10 @@ const labels = NAV_LABELS[lang];
     padding-block: var(--space-3);
     flex-wrap: wrap;
     gap: var(--space-3);
+  }
+  .brand-icon {
+    border-radius: 50%;
+    flex-shrink: 0;
   }
   .brand {
     display: inline-flex;
