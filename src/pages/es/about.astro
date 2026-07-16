@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="es"
+  slug="about"
+  title="Nosotros / Por Qué Construí Esto"
+  description="Por qué existe CanteraPro: construida por alguien que trabaja en una cantera y vio de primera mano cómo el software de negocios dejaba fuera a los jardineros independientes y cuadrillas pequeñas."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">Sobre CanteraPro</span>
+      <h1>Construí esto porque veo este mismo problema todos los días.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-content">
+      <p>
+        Trabajo en una cantera de materiales. Todos los días llegan jardineros independientes y
+        cuadrillas pequeñas a cargar mantillo, grava, granito decompuesto — lo que el trabajo
+        necesite. Hablo con estos hombres y mujeres todo el día, todos los días. Escucho sobre sus
+        trabajos, sus dolores de cabeza, sus temporadas de mucho trabajo. Y con el tiempo, algo se
+        volvió obvio: casi ninguno de ellos tenía una buena manera de administrar su negocio.
+      </p>
+      <p>
+        Escribían cotizaciones en el reverso de un recibo, enviaban facturas como un párrafo de
+        texto, trataban de recordar qué cliente todavía les debía dinero. Algunos habían probado
+        las apps de negocios "de verdad" — las diseñadas para empresas con 10, 20, 50 camionetas —
+        y terminaban pagando $25, $50, a veces casi $80 al mes por un montón de funciones que una
+        operación de una sola camioneta nunca va a usar. Eso es dinero real que sale del bolsillo
+        de alguien cada mes, solo para poder escribir una factura.
+      </p>
+      <p>
+        Y había algo más que casi todas estas apps hacían mal: el idioma. Una gran parte de la
+        gente más trabajadora en este oficio es parte de la comunidad hispana, y muchos todavía
+        están aprendiendo inglés. Casi todo el software de negocios de jardinería está construido
+        primero en inglés, con tal vez una traducción improvisada agregada si tienes suerte. Veo
+        de cerca la ética de trabajo de esta comunidad todos los días en la cantera — y no me
+        parecía bien que el software pensado para ayudarlos a manejar su negocio apenas hablara
+        su idioma.
+      </p>
+      <p>
+        Por eso construí CanteraPro. "Cantera" viene directamente de donde empezó esta idea. La
+        meta era simple: construir algo que realmente sirviera a los jardineros independientes y
+        las cuadrillas pequeñas. Algo que no cueste una fortuna, que no te encierre en una
+        suscripción solo para enviar una factura, que no necesite conexión a internet para
+        funcionar en el campo, y que trate el español como un idioma de primera clase, no como un
+        detalle secundario.
+      </p>
+      <p>
+        Por eso también existe el precio de por vida para miembros fundadores. Quería una forma
+        de recompensar a quienes creen en esto desde el principio — los que se arriesgan con una
+        app más pequeña e independiente en lugar de los grandes de siempre — con un precio que
+        nunca volverá una vez que esos cupos se agoten.
+      </p>
+      <p>
+        No soy una gran empresa de software. Soy alguien que ve este oficio de cerca todos los
+        días y quiso construir la herramienta que veía que la gente necesitaba. Si CanteraPro te
+        facilita la semana un poco, es exactamente para eso que se hizo.
+      </p>
+
+      <div class="callout about-callout">
+        <Icon name="leaf" size={22} />
+        <p>Gracias por conocer la app — espero que se gane un lugar en tu pantalla de inicio.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    lang="es"
+    heading="Pruébala."
+    subheading="Gratis para empezar, sin necesidad de cuenta."
+    primaryLabel="Descargar Ahora"
+    primaryHref={`${base}es/download/`}
+    secondaryLabel="Ver Funciones"
+    secondaryHref={`${base}es/features/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .about-content {
+    max-width: 68ch;
+  }
+  .about-callout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .about-callout p {
+    margin: 0;
+  }
+</style>

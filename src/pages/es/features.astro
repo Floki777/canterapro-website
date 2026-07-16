@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="es"
+  slug="features"
+  title="Funciones"
+  description="Todas las funciones de CanteraPro en detalle: clientes, trabajos, cotizaciones, facturas, horarios, reloj de tiempo, cuentas de mantenimiento, aplicaciones de productos, calculadora de materiales, registro de millaje, reportes de rentabilidad y respaldo encriptado."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">Funciones</span>
+      <h1>Todo lo que necesitas para manejar tu cuadrilla — nada que no necesites.</h1>
+      <p class="page-hero__lede">
+        Trece herramientas diseñadas específicamente para jardineros independientes y cuadrillas
+        pequeñas. Sin módulos pensados para operaciones grandes, sin funciones que nunca vas a usar.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2 feature-detail-grid">
+        <FeatureCard icon="users" title="Clientes">
+          <p>
+            Guarda la información de contacto completa de cada cliente — nombre, teléfono, correo
+            electrónico, dirección de la propiedad y notas. Cada trabajo, cotización y factura que
+            hayas creado para ese cliente queda enlazado directamente en su perfil, para que nunca
+            tengas que buscar en mensajes de texto viejos para recordar lo que se acordó.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="clipboard-list" title="Trabajos">
+          <p>
+            Crea un trabajo para cualquier cliente y da seguimiento a su estado, desde programado
+            hasta completado. Adjunta fotos de antes, durante y después para documentar tu
+            trabajo, agrega notas sobre cualquier detalle inusual y registra los materiales
+            usados para saber exactamente cuánto te costó cada trabajo.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="file-text" title="Cotizaciones">
+          <p>
+            Crea cotizaciones claras y detalladas por partidas, con soporte para impuestos y
+            descuentos, en minutos. Exporta un PDF profesional, envíalo directamente a tu cliente
+            por correo o mensaje de texto, y cuando te digan que sí, convierte la cotización
+            aceptada directamente en una factura — sin volver a escribir nada.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="receipt" title="Facturas">
+          <p>
+            Envía facturas por partidas que dan seguimiento al estado del pago, para que siempre
+            sepas quién te debe qué. Captura la firma de tu cliente directamente en tu teléfono,
+            exporta un PDF pulido y envíalo por correo o mensaje de texto en el momento en que
+            termines el trabajo.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="calendar-days" title="Horario">
+          <p>
+            Mira todos tus trabajos en un calendario sencillo organizado por día. Cuando tengas
+            varias paradas en un mismo día, el optimizador de rutas incluido planea el orden más
+            eficiente para visitarlas — menos tiempo manejando, más horas facturables.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="clock" title="Reloj de Tiempo">
+          <p>
+            Marca tu entrada y salida por trabajo con un toque, y agrega notas para explicar
+            cualquier diferencia en el tiempo. Perfecto para llevar un registro honesto de horas
+            trabajadas, ya sea que trabajes solo o con una cuadrilla pequeña.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="repeat" title="Cuentas de Mantenimiento">
+          <p>
+            Configura clientes recurrentes para corte de césped y mantenimiento semanal,
+            quincenal o mensual. CanteraPro marca automáticamente las cuentas que están atrasadas
+            para su próximo servicio, para que ningún jardín — ni ninguna factura — se te olvide.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="spray-can" title="Aplicaciones de Productos">
+          <p>
+            Registra cada aplicación de químicos o fertilizantes por propiedad, con seguimiento de
+            fecha de vencimiento incluido. Mantente al día con los requisitos de cumplimiento y
+            sabe exactamente cuándo le toca a cada propiedad su siguiente aplicación.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="calculator" title="Calculadora de Materiales">
+          <p>
+            Calcula las yardas cúbicas que necesitas de mantillo, tierra vegetal, grava, granito
+            decompuesto, arena, roca volcánica, roca de río o concreto triturado. Cada cálculo
+            incluye un margen de desperdicio del 10% y un estimado de costo, para que pidas la
+            cantidad correcta desde la primera vez.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="settings" title="Configuración del Negocio">
+          <p>
+            Configura la información de tu negocio, agrega tu logo y personaliza cómo aparece tu
+            nombre en las cotizaciones y facturas. Aquí también encontrarás el cambio de idioma
+            gratuito e ilimitado entre inglés y español para toda la app.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="route" title="Registro de Millaje" pro proLabel="Exportación en PDF es Pro">
+          <p>
+            CanteraPro registra automáticamente las millas de negocio que manejas entre trabajos y
+            muestra tu total mensual de forma gratuita. Mejora a Pro para obtener una exportación
+            en PDF lista para impuestos con un solo toque, con las tarifas de millaje del IRS ya
+            calculadas.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="trending-up" title="Reporte de Rentabilidad por Trabajo" pro proLabel="Pro">
+          <p>
+            Mira la ganancia y el margen real de cada trabajo, tomando en cuenta materiales, costo
+            de mano de obra e ingresos. Una gráfica sencilla te muestra tus trabajos más — y
+            menos — rentables, para que sepas exactamente dónde estás ganando dinero de verdad.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="shield-check" title="Respaldo y Restauración Encriptados">
+          <p>
+            Gratis para todos: respalda toda tu lista de clientes, trabajos, facturas y fotos en
+            un archivo protegido con contraseña que tú controlas — guárdalo en Archivos, Google
+            Drive, o envíatelo por correo. Restáuralo al instante en un teléfono nuevo. Pro agrega
+            respaldos automáticos semanales que funcionan en segundo plano, para que nunca tengas
+            que pensar en ello.
+          </p>
+        </FeatureCard>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    lang="es"
+    heading="Compruébalo tú mismo."
+    subheading="Descarga CanteraPro y comienza con el plan Gratis — sin cuenta, sin tarjeta de crédito, sin trucos."
+    primaryLabel="Descargar Ahora"
+    primaryHref={`${base}es/download/`}
+    secondaryLabel="Comparar Precios"
+    secondaryHref={`${base}es/pricing/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .page-hero__lede {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+</style>

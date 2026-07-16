@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const lastUpdated = 'July 15, 2026';
+---
+
+<BaseLayout
+  lang="en"
+  slug="terms"
+  title="Terms of Service"
+  description="CanteraPro's terms of service, covering the free plan, Pro subscription, founding-member lifetime purchases, and use of the app."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Terms of Service</span>
+      <h1>Terms of Service</h1>
+      <p class="legal__updated">Last updated: {lastUpdated}</p>
+
+      <div class="disclaimer">
+        <strong>Draft notice:</strong> These terms are a starting draft and have not yet been
+        reviewed by an attorney. Have them reviewed by a qualified professional before relying on
+        them for legal compliance.
+      </div>
+
+      <h2>1. Agreement to terms</h2>
+      <p>
+        By downloading, installing, or using the CanteraPro mobile application ("CanteraPro,"
+        "the App," "we," "us"), you agree to these Terms of Service. If you don't agree, please
+        don't use the App.
+      </p>
+
+      <h2>2. No account required</h2>
+      <p>
+        CanteraPro does not require you to create an account or provide personal identifying
+        information to use it. Your use of the App is tied to your device, not to a user profile
+        we maintain. Because of this, we have no ability to look up, transfer, or recover your
+        data on your behalf — see Section 6 below.
+      </p>
+
+      <h2>3. Plans and pricing</h2>
+      <p>CanteraPro is offered under the following plans, current pricing for which is always listed on our <a href={`${base}en/pricing/`}>Pricing page</a>:</p>
+      <ul>
+        <li><strong>Free:</strong> full feature access up to 10 clients, 10 jobs, 10 estimates, and 10 invoices, at no cost.</li>
+        <li><strong>Pro:</strong> a recurring monthly subscription that unlocks unlimited clients/jobs/estimates/invoices plus additional features described on the Pricing page.</li>
+        <li><strong>Lifetime:</strong> a one-time purchase, offered only to a limited number of founding-member buyers, that grants everything included in Pro for as long as the App is available, with no recurring payment. Once the founding-member lifetime spots described on the Pricing page are sold, the Lifetime option will close and only the Pro subscription will remain available for new purchases going forward.</li>
+      </ul>
+
+      <h2>4. Billing and payment processing</h2>
+      <p>
+        All purchases — subscription and one-time — are billed and processed by Apple (App Store)
+        or Google (Google Play), depending on where you downloaded the App. We do not process,
+        store, or have access to your payment card details. Subscription renewal, cancellation,
+        and billing management are all handled directly through your Apple ID or Google Play
+        account settings, not within CanteraPro.
+      </p>
+
+      <h2>5. Refunds</h2>
+      <p>
+        Because all payments are processed by Apple or Google, refund requests are handled
+        through their standard refund policies and processes, not directly by us:
+      </p>
+      <ul>
+        <li>App Store purchases: request a refund through <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or your Apple ID purchase history.</li>
+        <li>Google Play purchases: request a refund through the Google Play Store's order history and refund process.</li>
+      </ul>
+      <p>You're welcome to contact us at <a href="mailto:support@canterapro.app">support@canterapro.app</a> with any billing question and we'll help however we can.</p>
+
+      <h2>6. Your data and backups are your responsibility</h2>
+      <p>
+        Because CanteraPro stores your data locally on your device and we do not operate a cloud
+        server, we cannot recover your data if your device is lost, damaged, stolen, or reset. We
+        strongly encourage you to use the built-in Encrypted Backup feature regularly and store
+        your backup file somewhere safe (your device's Files app, your own cloud storage, or
+        emailed to yourself). We are not responsible for data loss resulting from a lost, damaged,
+        or reset device where no backup was made.
+      </p>
+
+      <h2>7. Acceptable use</h2>
+      <p>
+        You agree to use CanteraPro only for lawful business purposes, and not to attempt to
+        reverse-engineer, decompile, resell, or redistribute the App outside of the official App
+        Store and Google Play channels.
+      </p>
+
+      <h2>8. Disclaimer of warranties</h2>
+      <p>
+        CanteraPro is provided "as is" and "as available," without warranties of any kind, express
+        or implied, including but not limited to fitness for a particular purpose. Tools like the
+        Material Calculator, Mileage Log, and Job Profitability Report are provided as convenient
+        estimates to assist your business — you remain responsible for verifying figures used for
+        tax filing, compliance, or contractual purposes.
+      </p>
+
+      <h2>9. Limitation of liability</h2>
+      <p>
+        To the maximum extent permitted by law, CanteraPro and its developer shall not be liable
+        for any indirect, incidental, special, or consequential damages arising from your use of,
+        or inability to use, the App, including but not limited to lost data, lost profits, or
+        business interruption.
+      </p>
+
+      <h2>10. Changes to these terms</h2>
+      <p>
+        We may update these Terms of Service from time to time. Updates will be posted on this
+        page with a revised "Last updated" date. Continued use of the App after changes are posted
+        constitutes acceptance of the updated terms.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Questions about these terms? Reach out at
+        <a href="mailto:support@canterapro.app">support@canterapro.app</a> or visit the
+        <a href={`${base}en/support/`}>Support page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

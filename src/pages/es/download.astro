@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="es"
+  slug="download"
+  title="Descargar"
+  description="Descarga CanteraPro gratis en App Store o Google Play. No se necesita cuenta para empezar."
+>
+  <section class="section page-hero">
+    <div class="container download-hero">
+      <span class="eyebrow">Descargar</span>
+      <h1>Consigue CanteraPro en tu teléfono.</h1>
+      <p class="page-hero__lede">
+        Gratis para descargar, gratis para usar hasta 10 clientes/trabajos/cotizaciones/facturas.
+        Sin cuenta, sin tarjeta de crédito, sin asistente de configuración — instálala y empieza a
+        trabajar.
+      </p>
+
+      <div class="store-badges">
+        <!--
+          Reemplaza estos marcadores con los logotipos oficiales de Apple/Google y las URLs
+          reales de tu ficha en cada tienda cuando la app esté publicada. Logotipos oficiales:
+          Apple: https://developer.apple.com/app-store/marketing/guidelines/#section-badges
+          Google: https://play.google.com/intl/es_419/badges/
+        -->
+        <a href="#" class="store-badge" aria-label="Descárgala en App Store">
+          <Icon name="smartphone" size={22} />
+          <span>
+            <small>[MARCADOR] Descárgala en</small>
+            App Store
+          </span>
+        </a>
+        <a href="#" class="store-badge" aria-label="Disponible en Google Play">
+          <Icon name="smartphone" size={22} />
+          <span>
+            <small>[MARCADOR] Disponible en</small>
+            Google Play
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container next-steps">
+      <h2>¿Qué sigue?</h2>
+      <ol>
+        <li>Instala CanteraPro desde el enlace de la tienda de arriba.</li>
+        <li>Ábrela — entrarás directo a la app, sin pantalla de registro.</li>
+        <li>Configura tu idioma (inglés o español) en Configuración del Negocio, si lo necesitas.</li>
+        <li>Agrega tu primer cliente y listo.</li>
+      </ol>
+      <p>
+        ¿Nuevo en la app? La guía <a href={`${base}es/how-it-works/`}>Cómo Funciona</a> te lleva
+        paso a paso por cada función.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+  }
+  .download-hero {
+    max-width: 640px;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .page-hero__lede {
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+  .store-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-6);
+  }
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--color-primary-900);
+    color: #fff !important;
+    padding: 0.85em 1.5em;
+    border-radius: var(--radius-md);
+    text-decoration: none !important;
+    text-align: left;
+    font-weight: 700;
+  }
+  .store-badge small {
+    display: block;
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    opacity: 0.8;
+  }
+  .next-steps {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .next-steps ol {
+    text-align: left;
+    display: inline-block;
+  }
+</style>

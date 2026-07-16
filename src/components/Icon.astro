@@ -1,0 +1,23 @@
+---
+import { icons } from '../icons.js';
+
+interface Props {
+  name: keyof typeof icons;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className = '' } = Astro.props;
+const svg = icons[name];
+if (!svg) {
+  throw new Error(`Icon "${name}" not found in src/icons.js`);
+}
+// lucide-static ships width/height/stroke-width on the root <svg> — override
+// them so icons obey the size prop and inherit color via currentColor.
+const sized = svg
+  .replace(/width="24"/, `width="${size}"`)
+  .replace(/height="24"/, `height="${size}"`)
+  .replace('<svg', `<svg class="icon ${className}"`);
+---
+
+<Fragment set:html={sized} />

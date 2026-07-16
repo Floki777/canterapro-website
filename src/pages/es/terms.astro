@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const lastUpdated = '15 de julio de 2026';
+---
+
+<BaseLayout
+  lang="es"
+  slug="terms"
+  title="Términos de Servicio"
+  description="Términos de servicio de CanteraPro, que cubren el plan gratuito, la suscripción Pro, las compras de por vida para miembros fundadores y el uso de la app."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Términos de Servicio</span>
+      <h1>Términos de Servicio</h1>
+      <p class="legal__updated">Última actualización: {lastUpdated}</p>
+
+      <div class="disclaimer">
+        <strong>Aviso de borrador:</strong> Estos términos son un borrador inicial y todavía no
+        han sido revisados por un abogado. Haz que un profesional calificado los revise antes de
+        confiar en ellos para fines de cumplimiento legal.
+      </div>
+
+      <h2>1. Aceptación de los términos</h2>
+      <p>
+        Al descargar, instalar o usar la aplicación móvil CanteraPro ("CanteraPro," "la App,"
+        "nosotros"), aceptas estos Términos de Servicio. Si no estás de acuerdo, por favor no uses
+        la App.
+      </p>
+
+      <h2>2. No se requiere cuenta</h2>
+      <p>
+        CanteraPro no te pide crear una cuenta ni proporcionar información personal identificable
+        para usarla. Tu uso de la App está ligado a tu dispositivo, no a un perfil de usuario que
+        nosotros mantengamos. Debido a esto, no tenemos manera de buscar, transferir o recuperar
+        tus datos en tu nombre — ve la Sección 6 más abajo.
+      </p>
+
+      <h2>3. Planes y precios</h2>
+      <p>CanteraPro se ofrece bajo los siguientes planes, cuyos precios vigentes siempre están listados en nuestra <a href={`${base}es/pricing/`}>página de Precios</a>:</p>
+      <ul>
+        <li><strong>Gratis:</strong> acceso completo a las funciones hasta 10 clientes, 10 trabajos, 10 cotizaciones y 10 facturas, sin costo.</li>
+        <li><strong>Pro:</strong> una suscripción mensual recurrente que desbloquea clientes/trabajos/cotizaciones/facturas ilimitados, además de las funciones adicionales descritas en la página de Precios.</li>
+        <li><strong>De por Vida:</strong> una compra única, ofrecida solo a un número limitado de compradores miembros fundadores, que otorga todo lo incluido en Pro mientras la App esté disponible, sin pago recurrente. Una vez que se agoten los cupos de por vida para miembros fundadores descritos en la página de Precios, la opción De por Vida se cerrará y solo quedará disponible la suscripción Pro para nuevas compras en adelante.</li>
+      </ul>
+
+      <h2>4. Facturación y procesamiento de pagos</h2>
+      <p>
+        Todas las compras — de suscripción y de pago único — son facturadas y procesadas por
+        Apple (App Store) o Google (Google Play), dependiendo de dónde hayas descargado la App. No
+        procesamos, almacenamos ni tenemos acceso a los datos de tu tarjeta de pago. La renovación
+        de la suscripción, la cancelación y la administración de facturación se manejan
+        directamente en la configuración de tu cuenta de Apple ID o Google Play, no dentro de
+        CanteraPro.
+      </p>
+
+      <h2>5. Reembolsos</h2>
+      <p>
+        Como todos los pagos son procesados por Apple o Google, las solicitudes de reembolso se
+        manejan a través de sus procesos y políticas estándar de reembolso, no directamente por
+        nosotros:
+      </p>
+      <ul>
+        <li>Compras en App Store: solicita un reembolso en <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> o en el historial de compras de tu Apple ID.</li>
+        <li>Compras en Google Play: solicita un reembolso a través del historial de pedidos y el proceso de reembolso de Google Play Store.</li>
+      </ul>
+      <p>Puedes escribirnos a <a href="mailto:support@canterapro.app">support@canterapro.app</a> con cualquier pregunta sobre facturación y te ayudaremos en lo que podamos.</p>
+
+      <h2>6. Tus datos y respaldos son tu responsabilidad</h2>
+      <p>
+        Como CanteraPro guarda tus datos localmente en tu dispositivo y no operamos un servidor en
+        la nube, no podemos recuperar tus datos si tu dispositivo se pierde, se daña, te lo roban
+        o se restablece de fábrica. Te recomendamos ampliamente usar la función de Respaldo
+        Encriptado con regularidad y guardar tu archivo de respaldo en un lugar seguro (la app de
+        Archivos de tu dispositivo, tu propio almacenamiento en la nube, o enviado por correo a ti
+        mismo). No somos responsables de la pérdida de datos resultante de un dispositivo perdido,
+        dañado o restablecido cuando no se hizo un respaldo.
+      </p>
+
+      <h2>7. Uso aceptable</h2>
+      <p>
+        Aceptas usar CanteraPro únicamente para fines de negocio lícitos, y a no intentar realizar
+        ingeniería inversa, descompilar, revender ni redistribuir la App fuera de los canales
+        oficiales de App Store y Google Play.
+      </p>
+
+      <h2>8. Renuncia de garantías</h2>
+      <p>
+        CanteraPro se ofrece "tal cual" y "según disponibilidad," sin garantías de ningún tipo,
+        expresas o implícitas, incluyendo entre otras la idoneidad para un propósito particular.
+        Herramientas como la Calculadora de Materiales, el Registro de Millaje y el Reporte de
+        Rentabilidad por Trabajo se ofrecen como estimados convenientes para apoyar tu negocio —
+        tú sigues siendo responsable de verificar las cifras usadas para la presentación de
+        impuestos, cumplimiento, o fines contractuales.
+      </p>
+
+      <h2>9. Limitación de responsabilidad</h2>
+      <p>
+        En la máxima medida permitida por la ley, CanteraPro y su desarrollador no serán
+        responsables de ningún daño indirecto, incidental, especial o consecuente que surja del
+        uso, o la imposibilidad de uso, de la App, incluyendo entre otros la pérdida de datos,
+        pérdida de ganancias, o interrupción del negocio.
+      </p>
+
+      <h2>10. Cambios a estos términos</h2>
+      <p>
+        Podemos actualizar estos Términos de Servicio de vez en cuando. Las actualizaciones se
+        publicarán en esta página con una fecha de "Última actualización" revisada. El uso
+        continuado de la App después de que se publiquen los cambios constituye la aceptación de
+        los términos actualizados.
+      </p>
+
+      <h2>11. Contacto</h2>
+      <p>
+        ¿Preguntas sobre estos términos? Escríbenos a
+        <a href="mailto:support@canterapro.app">support@canterapro.app</a> o visita la página de
+        <a href={`${base}es/support/`}>Soporte</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

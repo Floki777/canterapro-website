@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const lastUpdated = 'July 15, 2026';
+---
+
+<BaseLayout
+  lang="en"
+  slug="privacy"
+  title="Privacy Policy"
+  description="CanteraPro's privacy policy: no account required, no data leaves your device, no analytics or tracking SDKs. Subscription billing is handled entirely by Apple and Google."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Privacy Policy</span>
+      <h1>Privacy Policy</h1>
+      <p class="legal__updated">Last updated: {lastUpdated}</p>
+
+      <div class="disclaimer">
+        <strong>Draft notice:</strong> This policy is a starting draft and has not yet been
+        reviewed by an attorney. Have it reviewed by a qualified professional before relying on it
+        for legal compliance.
+      </div>
+
+      <h2>The short version</h2>
+      <p>
+        CanteraPro does not require an account, does not use the internet to function, and does
+        not send your business data anywhere. Your clients, jobs, estimates, invoices, and photos
+        are stored only on your own device. We don't have a server, so we don't have your data.
+      </p>
+
+      <h2>No account, no sign-up</h2>
+      <p>
+        CanteraPro does not ask you to create an account, provide an email address, or sign in
+        with any third-party identity provider to use the app. There is no user database on our
+        end, because there is no "our end" storing your information — everything lives on your
+        phone.
+      </p>
+
+      <h2>No data leaves your device</h2>
+      <p>
+        All information you enter into CanteraPro — client contact details, job notes, photos,
+        estimates, invoices, mileage, and any other business data — is stored locally on your
+        device. We do not operate a cloud server that syncs, stores, or has access to this
+        information. If you choose to create an encrypted backup file, that file is created,
+        encrypted, and stored entirely under your control (in your device's Files app, your own
+        cloud storage account, or wherever you choose to save it) — we never see it or have access
+        to it.
+      </p>
+
+      <h2>No analytics or tracking SDKs</h2>
+      <p>
+        CanteraPro does not include third-party analytics software development kits (SDKs),
+        advertising trackers, or behavioral tracking tools. We do not collect usage analytics,
+        build an advertising profile of you, or sell or share your data with data brokers or
+        advertisers, because we do not collect that data in the first place.
+      </p>
+
+      <h2>Subscription billing</h2>
+      <p>
+        If you choose to purchase a Pro subscription or a Lifetime plan, that transaction is
+        processed entirely by Apple (App Store) or Google (Google Play), depending on where you
+        downloaded the app. CanteraPro has no server of its own to collect, process, or store your
+        payment information — Apple and Google handle billing, receipts, and payment data
+        directly, under their own respective privacy policies:
+      </p>
+      <ul>
+        <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></li>
+      </ul>
+
+      <h2>Permissions the app may request</h2>
+      <p>
+        CanteraPro may ask for device permissions strictly to power features you choose to use —
+        for example, camera access to attach job photos, or storage access to save and restore
+        encrypted backup files. These permissions are used only on your device, in the moment you
+        use the related feature, and are never used to transmit data off your phone.
+      </p>
+
+      <h2>Children's privacy</h2>
+      <p>
+        CanteraPro is a business tool intended for adult landscaping business owners and workers.
+        It is not directed at children, and we do not knowingly collect information from
+        children, consistent with the fact that we do not collect personal information from any
+        user at all.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, an updated version will be posted on this page with a revised
+        "Last updated" date. Because the app doesn't collect contact information from you, we
+        have no way to notify you directly — please check back here periodically.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? Reach out at
+        <a href="mailto:support@canterapro.app">support@canterapro.app</a> or visit the
+        <a href={`${base}en/support/`}>Support page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

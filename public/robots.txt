@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://floki777.github.io/canterapro-website/sitemap-index.xml

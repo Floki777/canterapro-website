@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="en"
+  slug="download"
+  title="Download"
+  description="Download CanteraPro free on the App Store or Google Play. No account required to get started."
+>
+  <section class="section page-hero">
+    <div class="container download-hero">
+      <span class="eyebrow">Download</span>
+      <h1>Get CanteraPro on your phone.</h1>
+      <p class="page-hero__lede">
+        Free to download, free to use up to 10 clients/jobs/estimates/invoices. No account, no
+        credit card, no setup wizard — install it and start working.
+      </p>
+
+      <div class="store-badges">
+        <!--
+          Replace these placeholders with the official Apple/Google badge assets and your
+          real store listing URLs once the app is live in each store. Official badges:
+          Apple: https://developer.apple.com/app-store/marketing/guidelines/#section-badges
+          Google: https://play.google.com/intl/en_us/badges/
+        -->
+        <a href="#" class="store-badge" aria-label="Download on the App Store">
+          <Icon name="smartphone" size={22} />
+          <span>
+            <small>[PLACEHOLDER] Download on the</small>
+            App Store
+          </span>
+        </a>
+        <a href="#" class="store-badge" aria-label="Get it on Google Play">
+          <Icon name="smartphone" size={22} />
+          <span>
+            <small>[PLACEHOLDER] Get it on</small>
+            Google Play
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container next-steps">
+      <h2>What happens next?</h2>
+      <ol>
+        <li>Install CanteraPro from the store link above.</li>
+        <li>Open it — you'll land straight in the app, no sign-up screen.</li>
+        <li>Set your language (English or Spanish) in Business Settings, if needed.</li>
+        <li>Add your first client and you're off.</li>
+      </ol>
+      <p>
+        New to the app? The <a href={`${base}en/how-it-works/`}>How It Works</a> guide walks
+        through every feature step by step.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+  }
+  .download-hero {
+    max-width: 640px;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .page-hero__lede {
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+  .store-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-6);
+  }
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--color-primary-900);
+    color: #fff !important;
+    padding: 0.85em 1.5em;
+    border-radius: var(--radius-md);
+    text-decoration: none !important;
+    text-align: left;
+    font-weight: 700;
+  }
+  .store-badge small {
+    display: block;
+    font-weight: 400;
+    font-size: var(--fs-xs);
+    opacity: 0.8;
+  }
+  .next-steps {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .next-steps ol {
+    text-align: left;
+    display: inline-block;
+  }
+</style>

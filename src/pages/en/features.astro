@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="en"
+  slug="features"
+  title="Features"
+  description="Every CanteraPro feature in detail: clients, jobs, estimates, invoices, scheduling, time clock, maintenance accounts, product applications, material calculator, mileage log, profitability reports, and encrypted backup."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">Features</span>
+      <h1>Everything you need to run your crew — nothing you don't.</h1>
+      <p class="page-hero__lede">
+        Thirteen tools built specifically for solo landscapers and small crews. No modules built
+        for enterprise operations, no features you'll never touch.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2 feature-detail-grid">
+        <FeatureCard icon="users" title="Clients">
+          <p>
+            Keep full contact information for every client — name, phone, email, property
+            address, and notes. Every job, estimate, and invoice you've ever created for that
+            client is linked right on their profile, so you never have to dig through old text
+            threads to remember what was agreed on.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="clipboard-list" title="Jobs">
+          <p>
+            Create a job for any client and track its status from scheduled to complete. Attach
+            before, during, and after photos to document your work, add notes for anything
+            unusual, and log the materials used so you know exactly what each job cost you.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="file-text" title="Estimates">
+          <p>
+            Build clean, line-item estimates with tax and discount support in minutes. Export a
+            professional PDF, send it straight to your client by email or text, and when they say
+            yes, convert the accepted estimate directly into an invoice — no retyping.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="receipt" title="Invoices">
+          <p>
+            Send line-item invoices that track payment status so you always know who owes what.
+            Capture your customer's signature right on your phone, export a polished PDF, and
+            send it by email or text the moment the job is done.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="calendar-days" title="Schedule">
+          <p>
+            See every job on a simple calendar view, organized by day. When you've got several
+            stops in one day, the built-in route optimizer plans the most efficient order to
+            visit them — less windshield time, more billable hours.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="clock" title="Time Clock">
+          <p>
+            Clock in and out per job with a tap, and attach notes to explain any gaps or extra
+            time. Perfect for keeping an honest record of hours worked, whether it's just you or
+            a small crew.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="repeat" title="Maintenance Accounts">
+          <p>
+            Set up recurring clients for weekly, biweekly, or monthly mowing and maintenance
+            work. CanteraPro automatically flags accounts that are overdue for service, so
+            nobody's lawn — and nobody's invoice — falls through the cracks.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="spray-can" title="Product Applications">
+          <p>
+            Log every chemical or fertilizer application per property, with due-date tracking
+            built in. Stay on top of compliance requirements and know exactly when each property
+            is due for its next application.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="calculator" title="Material Calculator">
+          <p>
+            Calculate the cubic yards you need for mulch, topsoil, gravel, decomposed granite,
+            sand, lava rock, river rock, or crushed concrete. Every calculation includes a 10%
+            waste buffer and a cost estimate, so you order the right amount the first time.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="settings" title="Business Settings">
+          <p>
+            Set up your business info, add your logo, and customize how your name appears on
+            estimates and invoices. This is also where you'll find the free, unlimited
+            English/Spanish language toggle for the entire app.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="route" title="Mileage Log" pro proLabel="PDF export is Pro">
+          <p>
+            CanteraPro automatically tracks the business miles you drive between jobs and shows
+            your running monthly total for free. Upgrade to Pro for a one-tap, tax-season-ready
+            PDF export with IRS mileage rate calculations already built in.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="trending-up" title="Job Profitability Report" pro>
+          <p>
+            See real profit and margin on every job, factoring in materials, labor cost, and
+            revenue. A simple chart shows you your most — and least — profitable jobs, so you
+            know exactly where your money is actually being made.
+          </p>
+        </FeatureCard>
+
+        <FeatureCard icon="shield-check" title="Encrypted Backup &amp; Restore">
+          <p>
+            Free for everyone: back up your entire client list, jobs, invoices, and photos to a
+            password-encrypted file that you control — store it in Files, Google Drive, or email
+            it to yourself. Restore it instantly on a new phone. Pro adds automatic weekly
+            backups that run silently in the background, so you never have to think about it.
+          </p>
+        </FeatureCard>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    lang="en"
+    heading="See it for yourself."
+    subheading="Download CanteraPro and start with the Free plan — no account, no credit card, no catch."
+    primaryLabel="Download Now"
+    primaryHref={`${base}en/download/`}
+    secondaryLabel="Compare Pricing"
+    secondaryHref={`${base}en/pricing/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .page-hero__lede {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+</style>

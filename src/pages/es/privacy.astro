@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const lastUpdated = '15 de julio de 2026';
+---
+
+<BaseLayout
+  lang="es"
+  slug="privacy"
+  title="Política de Privacidad"
+  description="Política de privacidad de CanteraPro: no se necesita cuenta, ningún dato sale de tu dispositivo, sin SDKs de análisis o rastreo. La facturación de suscripciones la maneja completamente Apple y Google."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Política de Privacidad</span>
+      <h1>Política de Privacidad</h1>
+      <p class="legal__updated">Última actualización: {lastUpdated}</p>
+
+      <div class="disclaimer">
+        <strong>Aviso de borrador:</strong> Esta política es un borrador inicial y todavía no ha
+        sido revisada por un abogado. Haz que un profesional calificado la revise antes de
+        confiar en ella para fines de cumplimiento legal.
+      </div>
+
+      <h2>La versión corta</h2>
+      <p>
+        CanteraPro no requiere una cuenta, no usa internet para funcionar, y no envía los datos de
+        tu negocio a ningún lugar. Tus clientes, trabajos, cotizaciones, facturas y fotos se
+        guardan únicamente en tu propio dispositivo. No tenemos un servidor, así que no tenemos
+        tus datos.
+      </p>
+
+      <h2>Sin cuenta, sin registro</h2>
+      <p>
+        CanteraPro no te pide crear una cuenta, dar una dirección de correo electrónico, ni
+        iniciar sesión con ningún proveedor de identidad externo para usar la app. No existe una
+        base de datos de usuarios de nuestro lado, porque no hay "nuestro lado" que guarde tu
+        información — todo vive en tu teléfono.
+      </p>
+
+      <h2>Ningún dato sale de tu dispositivo</h2>
+      <p>
+        Toda la información que ingresas en CanteraPro — datos de contacto de clientes, notas de
+        trabajos, fotos, cotizaciones, facturas, millaje y cualquier otro dato de negocio — se
+        guarda localmente en tu dispositivo. No operamos un servidor en la nube que sincronice,
+        almacene o tenga acceso a esta información. Si decides crear un archivo de respaldo
+        encriptado, ese archivo se crea, se encripta y se guarda completamente bajo tu control (en
+        la app de Archivos de tu dispositivo, tu propia cuenta de almacenamiento en la nube, o
+        donde tú decidas guardarlo) — nosotros nunca lo vemos ni tenemos acceso a él.
+      </p>
+
+      <h2>Sin análisis ni SDKs de rastreo</h2>
+      <p>
+        CanteraPro no incluye kits de desarrollo de software (SDKs) de análisis de terceros,
+        rastreadores publicitarios, ni herramientas de seguimiento de comportamiento. No
+        recopilamos datos de uso, no construimos un perfil publicitario tuyo, y no vendemos ni
+        compartimos tus datos con corredores de datos o anunciantes, porque en primer lugar no
+        recopilamos esos datos.
+      </p>
+
+      <h2>Facturación de suscripciones</h2>
+      <p>
+        Si decides comprar una suscripción Pro o un plan De por Vida, esa transacción es
+        procesada completamente por Apple (App Store) o Google (Google Play), dependiendo de
+        dónde hayas descargado la app. CanteraPro no tiene un servidor propio para recopilar,
+        procesar o almacenar tu información de pago — Apple y Google manejan directamente la
+        facturación, los recibos y los datos de pago, bajo sus propias políticas de privacidad:
+      </p>
+      <ul>
+        <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidad de Apple</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a></li>
+      </ul>
+
+      <h2>Permisos que la app puede solicitar</h2>
+      <p>
+        CanteraPro puede pedir permisos del dispositivo estrictamente para habilitar funciones que
+        tú decidas usar — por ejemplo, acceso a la cámara para adjuntar fotos de trabajos, o
+        acceso al almacenamiento para guardar y restaurar archivos de respaldo encriptados. Estos
+        permisos se usan solo en tu dispositivo, en el momento en que usas la función
+        relacionada, y nunca se usan para enviar datos fuera de tu teléfono.
+      </p>
+
+      <h2>Privacidad de menores</h2>
+      <p>
+        CanteraPro es una herramienta de negocio dirigida a propietarios y trabajadores adultos de
+        negocios de jardinería. No está dirigida a menores de edad, y no recopilamos a sabiendas
+        información de menores, en línea con el hecho de que no recopilamos información personal
+        de ningún usuario.
+      </p>
+
+      <h2>Cambios a esta política</h2>
+      <p>
+        Si esta política cambia, se publicará una versión actualizada en esta página con una
+        fecha de "Última actualización" revisada. Como la app no recopila tu información de
+        contacto, no tenemos forma de notificarte directamente — por favor revisa esta página de
+        vez en cuando.
+      </p>
+
+      <h2>Contacto</h2>
+      <p>
+        ¿Preguntas sobre esta política? Escríbenos a
+        <a href="mailto:support@canterapro.app">support@canterapro.app</a> o visita la página de
+        <a href={`${base}es/support/`}>Soporte</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

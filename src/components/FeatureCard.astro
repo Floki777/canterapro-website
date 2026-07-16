@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  icon: string;
+  title: string;
+  pro?: boolean;
+  proLabel?: string;
+}
+const { icon, title, pro = false, proLabel = 'Pro' } = Astro.props;
+---
+
+<div class="card feature-card">
+  <div class="feature-icon">
+    <Icon name={icon} size={26} />
+  </div>
+  <h3>
+    {title}
+    {pro && <span class="badge">{proLabel}</span>}
+  </h3>
+  <div class="feature-card__body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .feature-card h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--fs-md);
+  }
+  .feature-card__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

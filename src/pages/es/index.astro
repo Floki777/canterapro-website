@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="es"
+  slug=""
+  title="Gestión Sencilla de Negocios para Jardineros"
+  description="CanteraPro es la app de negocios para jardineros independientes y cuadrillas pequeñas, totalmente bilingüe y sin depender de internet. Sin inicio de sesión, sin nube, sin necesidad de internet."
+>
+  <section class="section hero">
+    <div class="container hero__inner">
+      <span class="eyebrow">Hecha para jardineros independientes y cuadrillas pequeñas</span>
+      <h1>Administra tu negocio de jardinería desde tu teléfono — sin ataduras.</h1>
+      <p class="hero__lede">
+        Clientes, trabajos, cotizaciones, facturas, horarios y más — todo en una sola app que
+        funciona sin señal, nunca te pide iniciar sesión y nunca envía tus datos a la nube.
+      </p>
+      <div class="cluster hero__actions">
+        <a href={`${base}es/download/`} class="btn btn--accent">
+          <Icon name="download" size={18} />
+          Obtener la App
+        </a>
+        <a href={`${base}es/features/`} class="btn btn--outline">Ver Todas las Funciones</a>
+      </div>
+
+      <ul class="trust-row">
+        <li><Icon name="cloud-off" size={20} /> Sin sincronización en la nube</li>
+        <li><Icon name="wifi-off" size={20} /> Funciona sin señal</li>
+        <li><Icon name="lock" size={20} /> Tus datos se quedan en tu teléfono</li>
+        <li><Icon name="languages" size={20} /> Cambio gratuito entre inglés y español</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Lo que incluye</span>
+        <h2>Todo lo que necesita una operación de una sola camioneta</h2>
+        <p>Nada de funciones diseñadas para empresas con 50 camionetas. Solo las herramientas que te ayudan a cobrar más rápido.</p>
+      </div>
+      <div class="grid grid--4">
+        <FeatureCard icon="users" title="Clientes">
+          <p>La información de contacto, trabajos, cotizaciones y facturas de cada cliente en un solo lugar.</p>
+        </FeatureCard>
+        <FeatureCard icon="clipboard-list" title="Trabajos">
+          <p>Da seguimiento al estado de cada trabajo, adjunta fotos de antes/durante/después y registra los materiales usados.</p>
+        </FeatureCard>
+        <FeatureCard icon="file-text" title="Cotizaciones">
+          <p>Crea cotizaciones profesionales por partidas y convierte las aceptadas en facturas al instante.</p>
+        </FeatureCard>
+        <FeatureCard icon="receipt" title="Facturas">
+          <p>Cobra más rápido con facturas en PDF y firma digital directamente en tu teléfono.</p>
+        </FeatureCard>
+        <FeatureCard icon="calendar-days" title="Horario">
+          <p>Mira tu semana de un vistazo y deja que el optimizador de rutas planee tu día más eficiente.</p>
+        </FeatureCard>
+        <FeatureCard icon="calculator" title="Calculadora de Materiales">
+          <p>Mantillo, grava, granito decompuesto y más — sabe exactamente cuántas yardas pedir.</p>
+        </FeatureCard>
+        <FeatureCard icon="route" title="Registro de Millaje">
+          <p>Seguimiento automático de millas de negocio con exportación en PDF lista para impuestos.</p>
+        </FeatureCard>
+        <FeatureCard icon="shield-check" title="Respaldo Encriptado">
+          <p>Respaldo y restauración protegidos con contraseña, gratis para todos — sin necesidad de suscripción.</p>
+        </FeatureCard>
+      </div>
+      <p class="section-footer-link">
+        <a href={`${base}es/features/`}>Ver las 13 funciones en detalle →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section bilingual">
+    <div class="container bilingual__inner">
+      <div class="feature-icon feature-icon--lg">
+        <Icon name="languages" size={32} />
+      </div>
+      <div>
+        <h2>Verdaderamente bilingüe — no una traducción improvisada.</h2>
+        <p>
+          Las cuadrillas de jardinería en Estados Unidos suelen ser bilingües o hablar
+          principalmente español, y la mayoría del software de negocios simplemente ignora esa
+          realidad. Toda la app de CanteraPro — cada pantalla, cada formulario, cada PDF — cambia
+          por completo entre inglés y español con un solo botón, gratis e ilimitado. Nunca
+          necesitas pagar una mejora para usarlo.
+        </p>
+        <a href={`${base}es/about/`}>Lee por qué lo construimos así →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Precios</span>
+        <h2>Precios justos para una operación de una sola camioneta</h2>
+        <p>Empieza gratis. Mejora solo cuando lo necesites. Sin contratos, sin cargos sorpresa.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card price-teaser">
+          <h3>Gratis</h3>
+          <p class="price-teaser__amount">$0</p>
+          <p>Hasta 10 clientes, trabajos, cotizaciones y facturas. Acceso completo a las funciones en esa escala.</p>
+        </div>
+        <div class="card price-teaser price-teaser--highlight">
+          <span class="badge">Más Popular</span>
+          <h3>Pro</h3>
+          <p class="price-teaser__amount">$14.99<span>/mes</span></p>
+          <p>Todo ilimitado, más exportación fiscal de millaje, reportes de rentabilidad y respaldos automáticos.</p>
+        </div>
+        <div class="card price-teaser">
+          <h3>De por Vida</h3>
+          <p class="price-teaser__amount">Desde $199</p>
+          <p>Precio único para miembros fundadores. Todo lo de Pro incluido, para siempre. Cupos limitados.</p>
+        </div>
+      </div>
+      <p class="section-footer-link">
+        <a href={`${base}es/pricing/`}>Compara todos los planes →</a>
+      </p>
+    </div>
+  </section>
+
+  <CTASection
+    lang="es"
+    heading="¿Listo para administrar tu negocio a tu manera?"
+    subheading="Descarga CanteraPro gratis y empieza a gestionar clientes, trabajos y facturas hoy mismo — sin necesidad de cuenta."
+    primaryLabel="Descargar Ahora"
+    primaryHref={`${base}es/download/`}
+    secondaryLabel="Cómo Funciona"
+    secondaryHref={`${base}es/how-it-works/`}
+  />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-top: var(--space-9);
+    background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--color-surface-0) 100%);
+  }
+  .hero__inner {
+    max-width: 760px;
+  }
+  .hero__lede {
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+    max-width: 60ch;
+  }
+  .hero__actions {
+    margin-bottom: var(--space-6);
+  }
+  .trust-row {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-ink-700);
+  }
+  .trust-row li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .section-heading {
+    max-width: 640px;
+    margin-bottom: var(--space-6);
+  }
+  .section-footer-link {
+    margin-top: var(--space-6);
+    text-align: center;
+    font-weight: 600;
+  }
+  .bilingual__inner {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+    max-width: 800px;
+  }
+  .feature-icon--lg {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+  }
+  .price-teaser {
+    text-align: center;
+  }
+  .price-teaser--highlight {
+    border-color: var(--color-accent-500);
+    border-width: 2px;
+  }
+  .price-teaser__amount {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    color: var(--color-primary-800);
+    margin: var(--space-2) 0;
+  }
+  .price-teaser__amount span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+  }
+
+  @media (max-width: 640px) {
+    .bilingual__inner {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const steps = [
+  {
+    icon: 'smartphone',
+    title: '1. Download and open the app — that\'s it',
+    body: `There's no sign-up screen. No email, no password, no "create an account" step. Install
+    CanteraPro from the App Store or Google Play, open it, and you're straight into the app. It
+    works the same with full signal, one bar, or airplane mode.`,
+    shot: 'App home screen immediately after first opening the app — no login screen present.',
+  },
+  {
+    icon: 'languages',
+    title: '2. Set your language',
+    body: `Go to Business Settings and tap the language toggle to switch the entire app — every
+    screen, every form, every PDF you generate — between English and Spanish. You can switch back
+    and forth as often as you like, for free, forever.`,
+    shot: 'Business Settings screen with the English/Spanish toggle highlighted.',
+  },
+  {
+    icon: 'users',
+    title: '3. Add your first client',
+    body: `Open the Clients tab and tap the add button. Enter their name, phone number, email, and
+    property address. Once saved, this client's profile will automatically collect every job,
+    estimate, and invoice you create for them — you'll never have to hunt for their history again.`,
+    shot: 'Clients tab showing the "Add Client" form with name, phone, email, and address fields.',
+  },
+  {
+    icon: 'clipboard-list',
+    title: '4. Create a job',
+    body: `From a client's profile, tap "New Job." Give it a status, add any notes about the work,
+    and snap before-photos if useful. As you work, add during and after photos and log the
+    materials you used — this becomes part of that job's permanent record.`,
+    shot: 'Job detail screen showing status, photo grid, notes, and a materials list.',
+  },
+  {
+    icon: 'file-text',
+    title: '5. Build and send an estimate',
+    body: `From a client's profile, tap "New Estimate" and add line items for labor and materials.
+    Apply tax or a discount if needed. Tap "Export PDF" to generate a professional-looking
+    estimate, then send it straight to your client by email or text from the same screen.`,
+    shot: 'Estimate builder screen with line items, tax/discount fields, and the "Export PDF" button.',
+  },
+  {
+    icon: 'receipt',
+    title: '6. Turn an accepted estimate into an invoice',
+    body: `Once your client says yes, open that estimate and tap "Convert to Invoice." Every line
+    item carries over automatically — no retyping. When the job's done, hand your customer your
+    phone to sign, then export and send the finished PDF invoice.`,
+    shot: 'Invoice screen showing the signature capture pad and the "Convert to Invoice" origin banner.',
+  },
+  {
+    icon: 'calendar-days',
+    title: '7. Plan your day with Schedule',
+    body: `Open the Schedule tab to see every job laid out by day. If you've got more than one
+    stop, tap "Optimize Route" and CanteraPro will suggest the most efficient order to visit
+    them, saving you drive time between jobs.`,
+    shot: 'Calendar day view with several jobs listed and the "Optimize Route" button.',
+  },
+  {
+    icon: 'clock',
+    title: '8. Clock in and out',
+    body: `From a job screen, tap "Clock In" when you arrive and "Clock Out" when you leave. Add a
+    quick note if anything affected your time — a supply run, a client conversation, whatever it
+    was. Your hours are saved automatically per job.`,
+    shot: 'Time clock widget on a job screen showing an active clocked-in timer.',
+  },
+  {
+    icon: 'repeat',
+    title: '9. Set up a recurring maintenance account',
+    body: `For clients you service on a schedule — weekly mowing, biweekly trimming, monthly
+    upkeep — open their profile and tap "Add Maintenance Account." Choose the frequency and
+    CanteraPro will automatically flag the account when it's overdue for its next visit.`,
+    shot: 'Maintenance Account setup screen with frequency options (weekly / biweekly / monthly).',
+  },
+  {
+    icon: 'spray-can',
+    title: '10. Log a product application',
+    body: `Open a property and tap "Log Application" under Product Applications. Record what was
+    applied and when. CanteraPro tracks the due date for the next application automatically, so
+    you always know when a property is due for its next treatment.`,
+    shot: 'Product Application log entry screen with product name, date applied, and next-due date.',
+  },
+  {
+    icon: 'calculator',
+    title: '11. Use the Material Calculator',
+    body: `Open the Material Calculator, choose your material — mulch, topsoil, gravel,
+    decomposed granite, sand, lava rock, river rock, or crushed concrete — and enter your area's
+    dimensions. CanteraPro calculates the cubic yards you need, adds a 10% waste buffer, and
+    gives you a cost estimate.`,
+    shot: 'Material Calculator screen with material dropdown, dimension fields, and the resulting yardage and cost.',
+  },
+  {
+    icon: 'route',
+    title: '12. Check your Mileage Log',
+    body: `CanteraPro automatically tracks the business miles you drive between jobs in the
+    background. Open the Mileage Log any time to see your running monthly total for free. On Pro,
+    tap "Export Tax PDF" for a ready-to-file report with IRS mileage rates already calculated.`,
+    shot: 'Mileage Log screen showing the monthly running total and the Pro "Export Tax PDF" button.',
+  },
+  {
+    icon: 'shield-check',
+    title: '13. Back up your data',
+    body: `Open Business Settings and tap "Backup Now." Set a password to encrypt the backup file,
+    then save it anywhere you like — your Files app, Google Drive, or emailed to yourself. If you
+    ever get a new phone, install CanteraPro, tap "Restore from Backup," pick your file, and
+    enter your password to bring everything back exactly as it was.`,
+    shot: 'Backup & Restore screen showing "Backup Now" and "Restore from Backup" buttons with a password field.',
+  },
+];
+---
+
+<BaseLayout
+  lang="en"
+  slug="how-it-works"
+  title="How It Works"
+  description="A step-by-step guide to using CanteraPro — from opening the app for the first time to backing up your data, no business-app experience required."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">How It Works</span>
+      <h1>A plain-language guide, even if you've never used a business app before.</h1>
+      <p class="page-hero__lede">
+        No jargon, no assumptions. Follow these steps in order the first time you use the app, or
+        jump to the feature you need help with.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ol class="howto-list">
+        {
+          steps.map((step) => (
+            <li class="howto-step card">
+              <div class="feature-icon">
+                <Icon name={step.icon} size={26} />
+              </div>
+              <h2>{step.title}</h2>
+              <p>{step.body}</p>
+              <div class="screenshot-placeholder">[SCREENSHOT: {step.shot}]</div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <CTASection
+    lang="en"
+    heading="Still have a question?"
+    subheading="Check the FAQ, or reach out directly — we read every message."
+    primaryLabel="Download Now"
+    primaryHref={`${base}en/download/`}
+    secondaryLabel="Visit Support"
+    secondaryHref={`${base}en/support/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .page-hero__lede {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+  .howto-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+  .howto-step h2 {
+    font-size: var(--fs-lg);
+  }
+  .screenshot-placeholder {
+    margin-top: var(--space-4);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    color: var(--color-ink-500);
+    font-size: var(--fs-sm);
+    font-style: italic;
+    background: var(--color-surface-50);
+  }
+</style>

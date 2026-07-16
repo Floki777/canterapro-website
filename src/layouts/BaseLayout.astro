@@ -1,0 +1,62 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  lang: 'en' | 'es';
+  slug: string; // '' for home, otherwise e.g. 'features'
+  title: string;
+  description: string;
+}
+
+const { lang, slug, title, description } = Astro.props;
+
+const base = import.meta.env.BASE_URL; // e.g. '/canterapro-website/'
+const path = (l: string) => `${base}${l}/${slug ? slug + '/' : ''}`;
+const canonicalUrl = new URL(path(lang), Astro.site);
+const enUrl = new URL(path('en'), Astro.site);
+const esUrl = new URL(path('es'), Astro.site);
+// Placeholder social-share image — swap for a real 1200x630 PNG/JPG before
+// launch (public/og-image.svg has a comment with the details).
+const ogImage = new URL(`${base}og-image.svg`, Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | CanteraPro</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | CanteraPro`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_US'} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'es_US' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | CanteraPro`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">{lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}</a>
+    <Header lang={lang} slug={slug} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} slug={slug} />
+  </body>
+</html>

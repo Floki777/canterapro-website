@@ -1,0 +1,27 @@
+---
+// Root entry point. Detects the browser's preferred language via a tiny
+// inline script (no framework, no build step) and redirects to /en/ or
+// /es/. If JS is disabled, the visible links below serve as a fallback —
+// nobody gets stuck on a blank page.
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CanteraPro</title>
+    <meta http-equiv="refresh" content={`0; url=${base}en/`} />
+    <script define:vars={{ base }}>
+      var preferred = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+      window.location.replace(base + preferred + '/');
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href={`${base}en/`}>Continue in English</a> ·
+      <a href={`${base}es/`}>Continuar en Español</a>
+    </p>
+  </body>
+</html>

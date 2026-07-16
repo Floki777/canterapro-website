@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="en"
+  slug="about"
+  title="About / Why I Built This"
+  description="Why CanteraPro exists: built by a rock yard worker who watched solo landscapers and small crews get priced out of business software that wasn't built for them."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">About CanteraPro</span>
+      <h1>I built this because I watch this exact problem every single day.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-content">
+      <p>
+        I work at a rock yard. Every day, solo landscapers and small crews pull in to load up
+        mulch, gravel, decomposed granite — whatever the job calls for. I talk to these guys all
+        day, every day. I hear about their jobs, their headaches, their busy seasons. And over
+        time, one thing became obvious: almost none of them had a good way to actually run their
+        business.
+      </p>
+      <p>
+        They were writing estimates on the back of a receipt, texting invoices as a paragraph,
+        trying to remember which client still owed them money. Some of them had tried the "real"
+        business apps — the ones built for companies running 10, 20, 50 trucks — and gotten stuck
+        paying $25, $50, sometimes close to $80 a month for a pile of features a one-truck
+        operation is never going to touch. That's real money out of a guy's pocket every single
+        month, just to write an invoice.
+      </p>
+      <p>
+        And there was something else these apps almost all got wrong: language. A huge share of
+        the hardest-working people in this trade are part of the Hispanic community, and a lot of
+        them are still learning English. Nearly every piece of landscaping business software out
+        there is built English-first, with maybe a half-hearted translation bolted on somewhere
+        if you're lucky. I see the work ethic of this community up close, every single day at the
+        yard — and it didn't sit right with me that the software meant to help them run their
+        businesses barely spoke their language.
+      </p>
+      <p>
+        So I built CanteraPro. "Cantera" is Spanish for a rock yard — it's a name that comes
+        straight from where this idea started. The goal was simple: build something that actually
+        serves solo landscapers and small crews. Something that doesn't cost a fortune, doesn't
+        lock you into a subscription just to send an invoice, doesn't require an internet
+        connection to work in the field, and treats Spanish as a first-class language, not an
+        afterthought.
+      </p>
+      <p>
+        That's also why the founding-member lifetime pricing exists. I wanted a way to reward the
+        people who believe in this early — the ones taking a chance on a smaller, independent app
+        instead of the big incumbents — with a price that will never come back once those spots
+        are gone.
+      </p>
+      <p>
+        I'm not a giant software company. I'm someone who sees this trade up close every day and
+        wanted to build the tool I kept watching people need. If CanteraPro makes your week a
+        little easier, that's exactly what it's for.
+      </p>
+
+      <div class="callout about-callout">
+        <Icon name="leaf" size={22} />
+        <p>Thanks for checking it out — I hope it earns a spot on your home screen.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    lang="en"
+    heading="Give it a try."
+    subheading="Free to start, no account required."
+    primaryLabel="Download Now"
+    primaryHref={`${base}en/download/`}
+    secondaryLabel="See Features"
+    secondaryHref={`${base}en/features/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .about-content {
+    max-width: 68ch;
+  }
+  .about-callout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .about-callout p {
+    margin: 0;
+  }
+</style>

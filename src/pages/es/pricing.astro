@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const rows = [
+  { label: 'Clientes, trabajos, cotizaciones, facturas', free: 'Hasta 10 de cada uno', pro: 'Ilimitado', lifetime: 'Ilimitado' },
+  { label: 'Cambio de idioma inglés/español', free: true, pro: true, lifetime: true },
+  { label: 'Fotos, notas y materiales en trabajos', free: true, pro: true, lifetime: true },
+  { label: 'Cotizaciones y facturas en PDF, firmas digitales', free: true, pro: true, lifetime: true },
+  { label: 'Horario y optimizador de rutas', free: true, pro: true, lifetime: true },
+  { label: 'Reloj de tiempo', free: true, pro: true, lifetime: true },
+  { label: 'Cuentas de mantenimiento con detección de atrasos', free: true, pro: true, lifetime: true },
+  { label: 'Seguimiento de aplicaciones de productos', free: true, pro: true, lifetime: true },
+  { label: 'Calculadora de materiales', free: true, pro: true, lifetime: true },
+  { label: 'Registro de millaje (total mensual)', free: true, pro: true, lifetime: true },
+  { label: 'Exportación fiscal de millaje en PDF (tarifas del IRS)', free: false, pro: true, lifetime: true },
+  { label: 'Reporte de rentabilidad por trabajo', free: false, pro: true, lifetime: true },
+  { label: 'Respaldo y restauración encriptados', free: true, pro: true, lifetime: true },
+  { label: 'Respaldos automáticos semanales', free: false, pro: true, lifetime: true },
+  { label: 'Facturación', free: '—', pro: 'Suscripción mensual', lifetime: 'Pago único' },
+];
+---
+
+<BaseLayout
+  lang="es"
+  slug="pricing"
+  title="Precios"
+  description="Precios de CanteraPro: un plan gratuito generoso, Pro a $14.99/mes, y una oferta limitada de por vida para miembros fundadores desde $199 de pago único."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">Precios</span>
+      <h1>Precios justos para una operación de una sola camioneta.</h1>
+      <p class="page-hero__lede">
+        Sin mínimos de 15 usuarios, sin funciones retenidas detrás de una llamada de ventas
+        empresarial. Empieza gratis, mejora cuando estés listo, o asegura un precio de por vida
+        para miembros fundadores mientras queden cupos.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3 pricing-cards">
+        <div class="card pricing-card">
+          <h2>Gratis</h2>
+          <p class="pricing-card__amount">$0</p>
+          <p class="pricing-card__desc">
+            Hasta 10 clientes, 10 trabajos, 10 cotizaciones y 10 facturas — acceso completo a las
+            funciones en esa escala, sin recortes ni limitaciones ocultas.
+          </p>
+          <a href={`${base}es/download/`} class="btn btn--outline">Comenzar Gratis</a>
+        </div>
+
+        <div class="card pricing-card pricing-card--highlight">
+          <span class="badge">Más Popular</span>
+          <h2>Pro</h2>
+          <p class="pricing-card__amount">$14.99<span>/mes</span></p>
+          <p class="pricing-card__desc">
+            Todo ilimitado, más la exportación fiscal de millaje, el reporte de rentabilidad por
+            trabajo y respaldos automáticos semanales.
+          </p>
+          <a href={`${base}es/download/`} class="btn btn--primary">Empezar con Pro</a>
+        </div>
+
+        <div class="card pricing-card">
+          <span class="badge badge--accent">Limitado</span>
+          <h2>De por Vida</h2>
+          <p class="pricing-card__amount">Desde $199<span>pago único</span></p>
+          <p class="pricing-card__desc">
+            Todo lo de Pro incluido, para siempre, por un solo pago. Precio de miembro fundador —
+            ver detalles abajo.
+          </p>
+          <a href="#founding-member" class="btn btn--outline">Ver Precio Fundador</a>
+        </div>
+      </div>
+
+      <div class="table-wrap comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">Función</th>
+              <th scope="col">Gratis</th>
+              <th scope="col">Pro</th>
+              <th scope="col">De por Vida</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              rows.map((row) => (
+                <tr>
+                  <th scope="row" set:html={row.label} />
+                  <td>
+                    {row.free === true ? <Icon name="check" size={18} /> : row.free === false ? <Icon name="x" size={18} /> : row.free}
+                  </td>
+                  <td>
+                    {row.pro === true ? <Icon name="check" size={18} /> : row.pro === false ? <Icon name="x" size={18} /> : row.pro}
+                  </td>
+                  <td>
+                    {row.lifetime === true ? <Icon name="check" size={18} /> : row.lifetime === false ? <Icon name="x" size={18} /> : row.lifetime}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="founding-member">
+    <div class="container founding">
+      <div class="feature-icon feature-icon--lg">
+        <Icon name="badge-check" size={32} />
+      </div>
+      <span class="eyebrow">Precio de Miembro Fundador</span>
+      <h2>Una oferta única, para quienes creen en esto desde el principio.</h2>
+      <p>
+        No somos una empresa con un departamento de marketing corriendo una cuenta regresiva
+        falsa. Esta es una estructura de precios real y limitada: las primeras 2,000 compras de
+        por vida obtienen un precio fijo de miembro fundador, y después las compras de por vida
+        se cierran para siempre. Después de eso, Pro estará disponible solo como suscripción
+        mensual.
+      </p>
+
+      <div class="grid grid--2 founding-tiers">
+        <div class="card founding-tier">
+          <h3>Primeros 1,000 cupos</h3>
+          <p class="founding-tier__price">$199 <span>de por vida, pago único</span></p>
+          <div class="founding-tier__progress" role="img" aria-label="347 de 1,000 cupos fundadores reclamados">
+            <div class="founding-tier__bar" style="width: 34.7%"></div>
+          </div>
+          <p class="founding-tier__count">347 de 1,000 reclamados*</p>
+        </div>
+        <div class="card founding-tier">
+          <h3>Siguientes 1,000 cupos (1,001–2,000)</h3>
+          <p class="founding-tier__price">$249 <span>de por vida, pago único</span></p>
+          <div class="founding-tier__progress" role="img" aria-label="0 de 1,000 cupos fundadores reclamados en este nivel">
+            <div class="founding-tier__bar" style="width: 0%"></div>
+          </div>
+          <p class="founding-tier__count">Se abre cuando se agoten los primeros 1,000</p>
+        </div>
+      </div>
+
+      <p class="founding-note">
+        * Valor de referencia — este contador no está conectado a un sistema de ventas en vivo
+        (este es un sitio estático sin servidor). Actualiza este número manualmente conforme
+        lleguen las ventas reales de por vida en App Store / Google Play.
+      </p>
+
+      <p>
+        Una vez que ambos niveles se agoten, el precio de por vida se cierra de forma permanente
+        y solo quedará disponible la suscripción Pro de $14.99/mes. Si crees en lo que estamos
+        construyendo, este es el mejor precio que jamás tendrá.
+      </p>
+    </div>
+  </section>
+
+  <CTASection
+    lang="es"
+    heading="Pruébalo gratis — mira si le queda a tu negocio."
+    subheading="No se requiere cuenta para empezar. Mejora cuando estés listo."
+    primaryLabel="Descargar Ahora"
+    primaryHref={`${base}es/download/`}
+    secondaryLabel="Leer las Preguntas Frecuentes"
+    secondaryHref={`${base}es/support/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .page-hero__lede {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+  .pricing-cards {
+    margin-bottom: var(--space-7);
+  }
+  .pricing-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-card--highlight {
+    border-color: var(--color-accent-500);
+    border-width: 2px;
+  }
+  .pricing-card__amount {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    color: var(--color-primary-800);
+    margin: var(--space-2) 0;
+  }
+  .pricing-card__amount span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    display: block;
+  }
+  .pricing-card__desc {
+    max-width: 32ch;
+  }
+  .comparison-table-wrap {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .comparison-table {
+    min-width: 640px;
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .comparison-table thead th {
+    background: var(--color-primary-50);
+    font-size: var(--fs-sm);
+  }
+  .comparison-table th[scope='row'] {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-ink-700);
+    font-family: var(--font-sans);
+  }
+  .comparison-table td :global(.icon) {
+    color: var(--color-primary-600);
+  }
+  .founding {
+    max-width: 760px;
+    text-align: center;
+  }
+  .founding-tiers {
+    text-align: left;
+    margin-block: var(--space-6);
+  }
+  .founding-tier__price {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    color: var(--color-primary-800);
+  }
+  .founding-tier__price span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    font-family: var(--font-sans);
+  }
+  .founding-tier__progress {
+    background: var(--color-primary-100);
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: var(--space-3);
+  }
+  .founding-tier__bar {
+    background: var(--color-accent-500);
+    height: 100%;
+  }
+  .founding-tier__count {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    margin-top: var(--space-2);
+  }
+  .founding-note {
+    font-size: var(--fs-xs);
+    color: var(--color-ink-500);
+    font-style: italic;
+  }
+  .badge--accent {
+    background: var(--color-earth-100);
+    color: var(--color-earth-700);
+  }
+</style>

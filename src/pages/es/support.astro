@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
+const supportEmail = 'support@canterapro.app';
+
+const faqs = [
+  {
+    q: '¿Necesito una cuenta para usar CanteraPro?',
+    a: 'No. No hay registro, inicio de sesión, ni creación de cuenta de ningún tipo. Instala la app y empieza a usarla de inmediato — todo está ligado a tu dispositivo, no a una cuenta.',
+  },
+  {
+    q: '¿Qué pasa si pierdo mi teléfono?',
+    a: `Si hiciste un respaldo encriptado (Configuración del Negocio → Respaldar Ahora), puedes
+    instalar CanteraPro en tu teléfono nuevo, restaurar desde ese archivo de respaldo, y recuperar
+    todo — clientes, trabajos, cotizaciones, facturas y fotos. Si no hiciste un respaldo,
+    lamentablemente esos datos no se pueden recuperar, ya que nunca se guardan en ningún lugar
+    más que en tu dispositivo. Te recomendamos respaldar con regularidad, o activar los respaldos
+    automáticos semanales de Pro.`,
+  },
+  {
+    q: '¿Funciona sin señal?',
+    a: 'Sí. CanteraPro está diseñada para funcionar completamente sin conexión — crear clientes, trabajos, cotizaciones, facturas y todo lo demás funciona con cero barras, en modo avión, o sin plan de datos. Solo necesitas conexión si quieres enviar un PDF a un cliente por correo o mensaje de texto.',
+  },
+  {
+    q: '¿Cómo es privada mi información si no hay inicio de sesión?',
+    a: `Justamente porque no hay inicio de sesión: tus datos nunca salen de tu teléfono. No existe
+    un servidor donde se almacenen, ni una cuenta a la que estén ligados, ni SDKs de análisis o
+    rastreo recopilando información sobre ti. Consulta nuestra
+    <a href="${base}es/privacy/">Política de Privacidad</a> completa para más detalles.`,
+  },
+  {
+    q: '¿Cómo funcionan los reembolsos?',
+    a: `Todas las compras se facturan a través de Apple o Google, así que los reembolsos siguen
+    sus procesos estándar — <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>
+    de App Store, o el historial de pedidos y proceso de reembolso de Google Play. Consulta
+    nuestros <a href="${base}es/terms/">Términos de Servicio</a> para más detalle, o escríbenos y
+    te ayudamos a encontrar el camino correcto.`,
+  },
+  {
+    q: '¿Qué pasa con el precio de por vida cuando se agoten los cupos de miembro fundador?',
+    a: `Una vez que se reclamen los 2,000 cupos de por vida para miembros fundadores, la opción De
+    por Vida se cierra definitivamente. Después de eso, la única forma de obtener todas las
+    funciones de CanteraPro será la suscripción Pro de $14.99/mes. El plan Gratis siempre seguirá
+    disponible.`,
+  },
+  {
+    q: '¿CanteraPro es realmente bilingüe, o es una traducción parcial?',
+    a: `Sí — cada pantalla, formulario y PDF generado funciona completamente tanto en inglés como
+    en español. Cambia el idioma gratis, cuando quieras, en Configuración del Negocio.`,
+  },
+  {
+    q: '¿Puedo usar CanteraPro en más de un teléfono?',
+    a: `Los datos de CanteraPro viven en el dispositivo donde está instalada. Para usarla en dos
+    teléfonos con los mismos datos, haz un respaldo en el primer dispositivo y restaura ese
+    respaldo en el segundo — solo ten en cuenta que a partir de ahí, los dos dispositivos no se
+    mantendrán sincronizados automáticamente entre sí, ya que no hay una nube que los conecte.`,
+  },
+];
+---
+
+<BaseLayout
+  lang="es"
+  slug="support"
+  title="Soporte"
+  description="Preguntas frecuentes sobre CanteraPro, además de cómo contactarnos directamente con solicitudes de soporte."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Soporte</span>
+      <h1>Con gusto te ayudamos.</h1>
+      <p>
+        Empieza con las preguntas frecuentes de abajo — la mayoría de las dudas se responden
+        aquí. ¿No encuentras lo que buscas? Escríbenos directamente y te responderemos.
+      </p>
+
+      <a href={`mailto:${supportEmail}`} class="btn btn--primary support-contact">
+        <Icon name="mail" size={18} />
+        {supportEmail}
+      </a>
+
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-list">
+        {
+          faqs.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p set:html={item.a} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .support-contact {
+    margin-block: var(--space-5) var(--space-7);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+  .faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+  }
+  .faq-item summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-primary-800);
+  }
+  .faq-item p {
+    margin-top: var(--space-3);
+    margin-bottom: 0;
+  }
+</style>

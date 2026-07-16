@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const rows = [
+  { label: 'Clients, jobs, estimates, invoices', free: 'Up to 10 each', pro: 'Unlimited', lifetime: 'Unlimited' },
+  { label: 'English/Spanish language toggle', free: true, pro: true, lifetime: true },
+  { label: 'Photos, notes &amp; materials on jobs', free: true, pro: true, lifetime: true },
+  { label: 'PDF estimates &amp; invoices, digital signatures', free: true, pro: true, lifetime: true },
+  { label: 'Schedule &amp; route optimizer', free: true, pro: true, lifetime: true },
+  { label: 'Time clock', free: true, pro: true, lifetime: true },
+  { label: 'Maintenance accounts with overdue detection', free: true, pro: true, lifetime: true },
+  { label: 'Product application tracking', free: true, pro: true, lifetime: true },
+  { label: 'Material calculator', free: true, pro: true, lifetime: true },
+  { label: 'Mileage log (monthly total)', free: true, pro: true, lifetime: true },
+  { label: 'Mileage tax PDF export (IRS rates)', free: false, pro: true, lifetime: true },
+  { label: 'Job profitability report', free: false, pro: true, lifetime: true },
+  { label: 'Encrypted backup &amp; restore', free: true, pro: true, lifetime: true },
+  { label: 'Automatic weekly backups', free: false, pro: true, lifetime: true },
+  { label: 'Billing', free: '—', pro: 'Monthly subscription', lifetime: 'One-time payment' },
+];
+---
+
+<BaseLayout
+  lang="en"
+  slug="pricing"
+  title="Pricing"
+  description="CanteraPro pricing: a generous free plan, Pro at $14.99/month, and a limited founding-member lifetime deal starting at $199 one time."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <span class="eyebrow">Pricing</span>
+      <h1>Fair pricing for a one-truck operation.</h1>
+      <p class="page-hero__lede">
+        No 15-seat minimums, no features held hostage behind an enterprise sales call. Start free,
+        upgrade when you're ready, or lock in a founding-member lifetime price while spots last.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3 pricing-cards">
+        <div class="card pricing-card">
+          <h2>Free</h2>
+          <p class="pricing-card__amount">$0</p>
+          <p class="pricing-card__desc">
+            Up to 10 clients, 10 jobs, 10 estimates, and 10 invoices — full feature access at that
+            scale, nothing crippled or watered down.
+          </p>
+          <a href={`${base}en/download/`} class="btn btn--outline">Get Started Free</a>
+        </div>
+
+        <div class="card pricing-card pricing-card--highlight">
+          <span class="badge">Most Popular</span>
+          <h2>Pro</h2>
+          <p class="pricing-card__amount">$14.99<span>/month</span></p>
+          <p class="pricing-card__desc">
+            Everything unlimited, plus the mileage tax export, the job profitability report, and
+            automatic weekly backups.
+          </p>
+          <a href={`${base}en/download/`} class="btn btn--primary">Start with Pro</a>
+        </div>
+
+        <div class="card pricing-card">
+          <span class="badge badge--accent">Limited</span>
+          <h2>Lifetime</h2>
+          <p class="pricing-card__amount">From $199<span>one time</span></p>
+          <p class="pricing-card__desc">
+            Everything Pro includes, forever, for one payment. Founding-member pricing — see
+            details below.
+          </p>
+          <a href="#founding-member" class="btn btn--outline">See Founding Pricing</a>
+        </div>
+      </div>
+
+      <div class="table-wrap comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Free</th>
+              <th scope="col">Pro</th>
+              <th scope="col">Lifetime</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              rows.map((row) => (
+                <tr>
+                  <th scope="row" set:html={row.label} />
+                  <td>
+                    {row.free === true ? <Icon name="check" size={18} /> : row.free === false ? <Icon name="x" size={18} /> : row.free}
+                  </td>
+                  <td>
+                    {row.pro === true ? <Icon name="check" size={18} /> : row.pro === false ? <Icon name="x" size={18} /> : row.pro}
+                  </td>
+                  <td>
+                    {row.lifetime === true ? <Icon name="check" size={18} /> : row.lifetime === false ? <Icon name="x" size={18} /> : row.lifetime}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="founding-member">
+    <div class="container founding">
+      <div class="feature-icon feature-icon--lg">
+        <Icon name="badge-check" size={32} />
+      </div>
+      <span class="eyebrow">Founding Member Pricing</span>
+      <h2>A one-time-only deal, for the people who believe in this early.</h2>
+      <p>
+        We're not a company with a marketing department running a fake-scarcity countdown. This
+        is a real, limited pricing structure: the first 2,000 lifetime purchases get locked-in
+        founding-member pricing, and then lifetime purchases close for good. After that, Pro is
+        available only as a monthly subscription going forward.
+      </p>
+
+      <div class="grid grid--2 founding-tiers">
+        <div class="card founding-tier">
+          <h3>First 1,000 spots</h3>
+          <p class="founding-tier__price">$199 <span>lifetime, one time</span></p>
+          <div class="founding-tier__progress" role="img" aria-label="347 of 1,000 founding spots claimed">
+            <div class="founding-tier__bar" style="width: 34.7%"></div>
+          </div>
+          <p class="founding-tier__count">347 of 1,000 claimed*</p>
+        </div>
+        <div class="card founding-tier">
+          <h3>Next 1,000 spots (1,001–2,000)</h3>
+          <p class="founding-tier__price">$249 <span>lifetime, one time</span></p>
+          <div class="founding-tier__progress" role="img" aria-label="0 of 1,000 founding spots claimed in this tier">
+            <div class="founding-tier__bar" style="width: 0%"></div>
+          </div>
+          <p class="founding-tier__count">Opens once the first 1,000 are gone</p>
+        </div>
+      </div>
+
+      <p class="founding-note">
+        * Placeholder value — this counter is not connected to a live sales feed (this is a
+        static site with no backend). Update this number by hand as real App Store / Google Play
+        lifetime sales come in.
+      </p>
+
+      <p>
+        Once both tiers are gone, lifetime pricing closes permanently and only the $14.99/month
+        Pro subscription will remain available. If you believe in what we're building, this is
+        the best price it will ever be.
+      </p>
+    </div>
+  </section>
+
+  <CTASection
+    lang="en"
+    heading="Try it free — see if it fits your business."
+    subheading="No account required to get started. Upgrade whenever you're ready."
+    primaryLabel="Download Now"
+    primaryHref={`${base}en/download/`}
+    secondaryLabel="Read the FAQ"
+    secondaryHref={`${base}en/support/`}
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .page-hero__lede {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+  }
+  .pricing-cards {
+    margin-bottom: var(--space-7);
+  }
+  .pricing-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-card--highlight {
+    border-color: var(--color-accent-500);
+    border-width: 2px;
+  }
+  .pricing-card__amount {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    color: var(--color-primary-800);
+    margin: var(--space-2) 0;
+  }
+  .pricing-card__amount span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    display: block;
+  }
+  .pricing-card__desc {
+    max-width: 32ch;
+  }
+  .comparison-table-wrap {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .comparison-table {
+    min-width: 640px;
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .comparison-table thead th {
+    background: var(--color-primary-50);
+    font-size: var(--fs-sm);
+  }
+  .comparison-table th[scope='row'] {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-ink-700);
+    font-family: var(--font-sans);
+  }
+  .comparison-table td :global(.icon) {
+    color: var(--color-primary-600);
+  }
+  .founding {
+    max-width: 760px;
+    text-align: center;
+  }
+  .founding-tiers {
+    text-align: left;
+    margin-block: var(--space-6);
+  }
+  .founding-tier__price {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    color: var(--color-primary-800);
+  }
+  .founding-tier__price span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    font-family: var(--font-sans);
+  }
+  .founding-tier__progress {
+    background: var(--color-primary-100);
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: var(--space-3);
+  }
+  .founding-tier__bar {
+    background: var(--color-accent-500);
+    height: 100%;
+  }
+  .founding-tier__count {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+    margin-top: var(--space-2);
+  }
+  .founding-note {
+    font-size: var(--fs-xs);
+    color: var(--color-ink-500);
+    font-style: italic;
+  }
+  .badge--accent {
+    background: var(--color-earth-100);
+    color: var(--color-earth-700);
+  }
+</style>

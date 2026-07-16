@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import FeatureCard from '../../components/FeatureCard.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="en"
+  slug=""
+  title="Simple Business Management for Landscapers"
+  description="CanteraPro is the offline-first, fully bilingual business app for solo landscapers and small crews. No login, no cloud, no internet required."
+>
+  <section class="section hero">
+    <div class="container hero__inner">
+      <span class="eyebrow">Built for solo landscapers &amp; small crews</span>
+      <h1>Run your landscaping business from your phone — no strings attached.</h1>
+      <p class="hero__lede">
+        Clients, jobs, estimates, invoices, scheduling, and more — all in one app that works with
+        zero signal, never asks you to log in, and never sends your data to the cloud.
+      </p>
+      <div class="cluster hero__actions">
+        <a href={`${base}en/download/`} class="btn btn--accent">
+          <Icon name="download" size={18} />
+          Get the App
+        </a>
+        <a href={`${base}en/features/`} class="btn btn--outline">See All Features</a>
+      </div>
+
+      <ul class="trust-row">
+        <li><Icon name="cloud-off" size={20} /> No cloud sync</li>
+        <li><Icon name="wifi-off" size={20} /> Works with no signal</li>
+        <li><Icon name="lock" size={20} /> Your data stays on your phone</li>
+        <li><Icon name="languages" size={20} /> Free English/Spanish toggle</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">What's inside</span>
+        <h2>Everything a one-truck operation actually needs</h2>
+        <p>No bloated features built for 50-truck companies. Just the tools that get you paid faster.</p>
+      </div>
+      <div class="grid grid--4">
+        <FeatureCard icon="users" title="Clients">
+          <p>Every client's contact info, jobs, estimates, and invoices in one place.</p>
+        </FeatureCard>
+        <FeatureCard icon="clipboard-list" title="Jobs">
+          <p>Track job status, attach before/during/after photos, and log materials used.</p>
+        </FeatureCard>
+        <FeatureCard icon="file-text" title="Estimates">
+          <p>Build professional line-item estimates and turn accepted ones into invoices instantly.</p>
+        </FeatureCard>
+        <FeatureCard icon="receipt" title="Invoices">
+          <p>Get paid faster with PDF invoices and on-phone digital signature capture.</p>
+        </FeatureCard>
+        <FeatureCard icon="calendar-days" title="Schedule">
+          <p>See your week at a glance and let the route optimizer plan your most efficient day.</p>
+        </FeatureCard>
+        <FeatureCard icon="calculator" title="Material Calculator">
+          <p>Mulch, gravel, decomposed granite, and more — know exactly how many yards to order.</p>
+        </FeatureCard>
+        <FeatureCard icon="route" title="Mileage Log">
+          <p>Automatic business mileage tracking with a tax-season-ready PDF export.</p>
+        </FeatureCard>
+        <FeatureCard icon="shield-check" title="Encrypted Backup">
+          <p>Password-protected backup and restore, free for everyone — no subscription required.</p>
+        </FeatureCard>
+      </div>
+      <p class="section-footer-link">
+        <a href={`${base}en/features/`}>See all 13 features in detail →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section bilingual">
+    <div class="container bilingual__inner">
+      <div class="feature-icon feature-icon--lg">
+        <Icon name="languages" size={32} />
+      </div>
+      <div>
+        <h2>Genuinely bilingual — not a bolted-on translation.</h2>
+        <p>
+          Landscaping crews across the U.S. are often bilingual or Spanish-primary, and most
+          business software simply ignores that. CanteraPro's entire app — every screen, every
+          form, every PDF — switches fully between English and Spanish with one free, unlimited
+          toggle. No upgrade required, ever.
+        </p>
+        <a href={`${base}en/about/`}>Read why we built it this way →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Pricing</span>
+        <h2>Fair pricing for a one-truck operation</h2>
+        <p>Start free. Upgrade only when you outgrow it. No contracts, no surprise fees.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card price-teaser">
+          <h3>Free</h3>
+          <p class="price-teaser__amount">$0</p>
+          <p>Up to 10 clients, jobs, estimates, and invoices. Full feature access at that scale.</p>
+        </div>
+        <div class="card price-teaser price-teaser--highlight">
+          <span class="badge">Most Popular</span>
+          <h3>Pro</h3>
+          <p class="price-teaser__amount">$14.99<span>/mo</span></p>
+          <p>Everything unlimited, plus mileage tax export, profitability reports, and auto backups.</p>
+        </div>
+        <div class="card price-teaser">
+          <h3>Lifetime</h3>
+          <p class="price-teaser__amount">From $199</p>
+          <p>Founding-member one-time price. Everything Pro includes, forever. Limited spots.</p>
+        </div>
+      </div>
+      <p class="section-footer-link">
+        <a href={`${base}en/pricing/`}>Compare all plans →</a>
+      </p>
+    </div>
+  </section>
+
+  <CTASection
+    lang="en"
+    heading="Ready to run your business your way?"
+    subheading="Download CanteraPro free and start managing clients, jobs, and invoices today — no account required."
+    primaryLabel="Download Now"
+    primaryHref={`${base}en/download/`}
+    secondaryLabel="How It Works"
+    secondaryHref={`${base}en/how-it-works/`}
+  />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-top: var(--space-9);
+    background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--color-surface-0) 100%);
+  }
+  .hero__inner {
+    max-width: 760px;
+  }
+  .hero__lede {
+    font-size: var(--fs-md);
+    color: var(--color-ink-700);
+    max-width: 60ch;
+  }
+  .hero__actions {
+    margin-bottom: var(--space-6);
+  }
+  .trust-row {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-ink-700);
+  }
+  .trust-row li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .section-heading {
+    max-width: 640px;
+    margin-bottom: var(--space-6);
+  }
+  .section-footer-link {
+    margin-top: var(--space-6);
+    text-align: center;
+    font-weight: 600;
+  }
+  .bilingual__inner {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+    max-width: 800px;
+  }
+  .feature-icon--lg {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+  }
+  .price-teaser {
+    text-align: center;
+  }
+  .price-teaser--highlight {
+    border-color: var(--color-accent-500);
+    border-width: 2px;
+  }
+  .price-teaser__amount {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    color: var(--color-primary-800);
+    margin: var(--space-2) 0;
+  }
+  .price-teaser__amount span {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
+  }
+
+  @media (max-width: 640px) {
+    .bilingual__inner {
+      flex-direction: column;
+    }
+  }
+</style>

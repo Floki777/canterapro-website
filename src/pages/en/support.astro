@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+
+const base = import.meta.env.BASE_URL;
+const supportEmail = 'support@canterapro.app';
+
+const faqs = [
+  {
+    q: 'Do I need an account to use CanteraPro?',
+    a: 'No. There is no sign-up, login, or account creation of any kind. Install the app and start using it right away — everything is tied to your device, not to an account.',
+  },
+  {
+    q: 'What happens if I lose my phone?',
+    a: `If you've made an encrypted backup (Business Settings → Backup Now), you can install
+    CanteraPro on your new phone, restore from that backup file, and get everything back — clients,
+    jobs, estimates, invoices, and photos. If you haven't made a backup, that data unfortunately
+    can't be recovered, since it's never stored anywhere but your device. We recommend backing up
+    regularly, or turning on Pro's automatic weekly backups.`,
+  },
+  {
+    q: 'Does this work with no signal?',
+    a: 'Yes. CanteraPro is built to work completely offline — creating clients, jobs, estimates, invoices, and everything else works with zero bars, airplane mode, or no data plan at all. You only need a connection if you want to email or text a PDF to a client.',
+  },
+  {
+    q: "How is my data private if there's no login?",
+    a: `Precisely because there's no login: your data never leaves your phone in the first place.
+    There's no server for it to be stored on, no account for it to be tied to, and no analytics
+    or tracking SDKs collecting information about you. See our full
+    <a href="${base}en/privacy/">Privacy Policy</a> for details.`,
+  },
+  {
+    q: 'How do refunds work?',
+    a: `All purchases are billed through Apple or Google, so refunds go through their standard
+    processes — the App Store's <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>,
+    or Google Play's order history and refund flow. See our
+    <a href="${base}en/terms/">Terms of Service</a> for more detail, or email us and we'll help
+    point you in the right direction.`,
+  },
+  {
+    q: 'What happens to lifetime pricing once the founding-member spots are gone?',
+    a: `Once all 2,000 founding-member lifetime spots are claimed, the Lifetime option closes for
+    good. After that, the only way to get CanteraPro's full feature set will be the $14.99/month
+    Pro subscription. The Free plan will always remain available.`,
+  },
+  {
+    q: 'Is CanteraPro really fully bilingual, not just partially translated?',
+    a: `Yes — every screen, form, and generated PDF works fully in both English and Spanish. Toggle
+    the language for free, any time, in Business Settings.`,
+  },
+  {
+    q: 'Can I use CanteraPro on more than one phone?',
+    a: `CanteraPro's data lives on the device it's installed on. To use it across two phones with
+    the same data, back up on the first device and restore that backup on the second — just keep
+    in mind that from then on, the two devices won't automatically stay in sync with each other,
+    since there's no cloud syncing them.`,
+  },
+];
+---
+
+<BaseLayout
+  lang="en"
+  slug="support"
+  title="Support"
+  description="Frequently asked questions about CanteraPro, plus how to reach us directly with support requests."
+>
+  <section class="section legal">
+    <div class="container legal__inner">
+      <span class="eyebrow">Support</span>
+      <h1>We're happy to help.</h1>
+      <p>
+        Start with the FAQ below — most questions are answered here. Can't find what you need?
+        Email us directly and we'll get back to you.
+      </p>
+
+      <a href={`mailto:${supportEmail}`} class="btn btn--primary support-contact">
+        <Icon name="mail" size={18} />
+        {supportEmail}
+      </a>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {
+          faqs.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p set:html={item.a} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .support-contact {
+    margin-block: var(--space-5) var(--space-7);
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+  .faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+  }
+  .faq-item summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-primary-800);
+  }
+  .faq-item p {
+    margin-top: var(--space-3);
+    margin-bottom: 0;
+  }
+</style>
