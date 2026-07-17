@@ -108,7 +108,5 @@ before pointing real users at this site:
 - **Screenshots** on the How It Works page — every step has a
   `[SCREENSHOT: description of what goes here]` placeholder box marking exactly what real app
   screenshot should go there.
-- **Privacy Policy and Terms of Service** — both pages carry a visible draft disclaimer at the
-  top. Have an attorney review them before relying on them for legal compliance.
 - **Support email** (`tier1offgrid@protonmail.com`) — used throughout the Support, Privacy, and
   Terms pages via `mailto:` links. Update it in each file if this changes.

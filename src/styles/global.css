@@ -420,20 +420,6 @@ button {
   }
 }
 
-.disclaimer {
-  border: 2px solid var(--color-warning);
-  background: var(--color-earth-100);
-  border-radius: var(--radius-md);
-  padding: var(--space-5);
-  margin-bottom: var(--space-7);
-  font-size: var(--fs-sm);
-}
-@media (prefers-color-scheme: dark) {
-  .disclaimer {
-    background: var(--color-surface-100);
-  }
-}
-
 .table-wrap {
   overflow-x: auto;
 }
