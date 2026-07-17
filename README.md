@@ -110,6 +110,5 @@ before pointing real users at this site:
   screenshot should go there.
 - **Privacy Policy and Terms of Service** — both pages carry a visible draft disclaimer at the
   top. Have an attorney review them before relying on them for legal compliance.
-- **Support email** (`support@cantera-pro.com`) — used throughout the Support, Privacy, and Terms
-  pages via `mailto:` links. Update it in each file if the real support address differs, and make
-  sure that inbox actually exists/forwards somewhere before launch.
+- **Support email** (`tier1offgrid@protonmail.com`) — used throughout the Support, Privacy, and
+  Terms pages via `mailto:` links. Update it in each file if this changes.
