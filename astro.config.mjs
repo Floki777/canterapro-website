@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// This deploys to the default GitHub Pages URL for this repo:
-// https://floki777.github.io/canterapro-website/
-// If you later attach a custom domain (e.g. canterapro.app), change `site`
-// to the custom domain, delete the `base` line below, and add a `CNAME`
-// file to /public with the domain name. See README.md for the full steps.
+// Deploys to the custom domain https://cantera-pro.com (see /public/CNAME).
+// No `base` path needed — a custom domain serves from the root, unlike the
+// default project-page URL (https://<user>.github.io/<repo>/) this site
+// used before.
 export default defineConfig({
-  site: 'https://floki777.github.io',
-  base: '/canterapro-website/',
+  site: 'https://cantera-pro.com',
   integrations: [sitemap()],
 });

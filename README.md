@@ -1,6 +1,6 @@
 # CanteraPro Website
 
-The marketing and documentation website for [CanteraPro](https://canterapro.app) — a static,
+The marketing and documentation website for [CanteraPro](https://cantera-pro.com) — a static,
 fully bilingual (English/Spanish) site built with [Astro](https://astro.build). No backend, no
 server required, deployed straight to GitHub Pages. This matches CanteraPro itself: no cloud, no
 account, everything works standing still.
@@ -79,22 +79,20 @@ changes are pushed to `main`. The workflow builds the site with `npm run build` 
 `dist/` folder to GitHub Pages — there's nothing to trigger manually.
 
 Make sure GitHub Pages is set to deploy from **GitHub Actions** (not a branch) under
-**Settings → Pages** in this repository. Once that's set, the live site is at:
+**Settings → Pages** in this repository. The live site is at:
 
 ```
-https://floki777.github.io/canterapro-website/
+https://cantera-pro.com
 ```
 
-### Using a custom domain instead
+This repo is configured for that custom domain: `public/CNAME` contains `cantera-pro.com`, and
+`astro.config.mjs` has no `base` path set (a custom domain serves from the root, unlike the
+default `github.io/repo-name/` project-page URL, which needed one). DNS for `cantera-pro.com`
+points at GitHub Pages' IPs, and `www.cantera-pro.com` is a CNAME to `floki777.github.io`.
 
-If you later point a real domain (e.g. `canterapro.app`) at this site:
-
-1. Add a `CNAME` file to the `public/` folder containing just the domain name.
-2. In `astro.config.mjs`, change `site` to `https://your-domain.com` and delete the `base` line
-   entirely (project-page path prefixes are only needed for the default `github.io/repo-name/`
-   URL).
-3. Configure the custom domain in **Settings → Pages** on GitHub, and set up the DNS records
-   GitHub gives you with your domain registrar.
+If you ever need to move this to a different domain: update the domain name in `public/CNAME`,
+change `site` in `astro.config.mjs` to match, and update the custom domain under
+**Settings → Pages** on GitHub along with the new DNS records at your registrar.
 
 ## Before this goes fully live
 
@@ -112,5 +110,6 @@ before pointing real users at this site:
   screenshot should go there.
 - **Privacy Policy and Terms of Service** — both pages carry a visible draft disclaimer at the
   top. Have an attorney review them before relying on them for legal compliance.
-- **Support email** (`support@canterapro.app`) — used throughout the Support, Privacy, and Terms
-  pages via `mailto:` links. Update it in each file if the real support address differs.
+- **Support email** (`support@cantera-pro.com`) — used throughout the Support, Privacy, and Terms
+  pages via `mailto:` links. Update it in each file if the real support address differs, and make
+  sure that inbox actually exists/forwards somewhere before launch.
