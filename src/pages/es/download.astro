@@ -8,55 +8,61 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout
   lang="es"
   slug="download"
-  title="Descargar"
-  description="Descarga CanteraPro gratis en App Store o Google Play. No se necesita cuenta para empezar."
+  title="Próximamente"
+  description="CanteraPro está en revisión con Apple App Store y a punto de entrar en pruebas cerradas en Google Play. Los enlaces de descarga aparecerán aquí en cuanto esté disponible."
 >
   <section class="section page-hero">
     <div class="container download-hero">
-      <span class="eyebrow">Descargar</span>
-      <h1>Consigue CanteraPro en tu teléfono.</h1>
+      <span class="eyebrow">Próximamente</span>
+      <h1>CanteraPro está por llegar.</h1>
       <p class="page-hero__lede">
-        Gratis para descargar, gratis para usar hasta 10 clientes/trabajos/cotizaciones/facturas.
-        Sin cuenta, sin tarjeta de crédito, sin asistente de configuración — instálala y empieza a
-        trabajar.
+        Ya enviamos CanteraPro a revisión de Apple App Store, y estamos por abrir las pruebas
+        cerradas en Google Play. Los enlaces reales de descarga aparecerán aquí en cuanto sea
+        aprobada — no necesitas anotarte en ninguna lista, solo vuelve a revisar.
       </p>
 
       <div class="store-badges">
         <!--
-          Reemplaza estos marcadores con los logotipos oficiales de Apple/Google y las URLs
-          reales de tu ficha en cada tienda cuando la app esté publicada. Logotipos oficiales:
+          Una vez que la app sea aprobada en cada tienda, reemplaza estos dos <span> por enlaces
+          <a href="..."> reales a tus fichas de tienda (idealmente con los logotipos oficiales de
+          Apple/Google). Logotipos oficiales:
           Apple: https://developer.apple.com/app-store/marketing/guidelines/#section-badges
           Google: https://play.google.com/intl/es_419/badges/
         -->
-        <a href="#" class="store-badge" aria-label="Descárgala en App Store">
+        <span class="store-badge store-badge--pending" aria-label="Próximamente en App Store">
           <Icon name="smartphone" size={22} />
           <span>
-            <small>[MARCADOR] Descárgala en</small>
+            <small>Próximamente en</small>
             App Store
           </span>
-        </a>
-        <a href="#" class="store-badge" aria-label="Disponible en Google Play">
+        </span>
+        <span class="store-badge store-badge--pending" aria-label="Próximamente en Google Play">
           <Icon name="smartphone" size={22} />
           <span>
-            <small>[MARCADOR] Disponible en</small>
+            <small>Próximamente en</small>
             Google Play
           </span>
-        </a>
+        </span>
       </div>
+
+      <p class="notify-note">
+        ¿Quieres saber en cuanto esté disponible? <a href="mailto:tier1offgrid@protonmail.com?subject=Avísame%20cuando%20CanteraPro%20esté%20disponible">Escríbenos</a>
+        y te avisamos.
+      </p>
     </div>
   </section>
 
   <section class="section section--alt">
     <div class="container next-steps">
-      <h2>¿Qué sigue?</h2>
+      <h2>Qué esperar cuando esté disponible</h2>
       <ol>
-        <li>Instala CanteraPro desde el enlace de la tienda de arriba.</li>
+        <li>Instala CanteraPro desde App Store o Google Play.</li>
         <li>Ábrela — entrarás directo a la app, sin pantalla de registro.</li>
         <li>Configura tu idioma (inglés o español) en Configuración del Negocio, si lo necesitas.</li>
         <li>Agrega tu primer cliente y listo.</li>
       </ol>
       <p>
-        ¿Nuevo en la app? La guía <a href={`${base}es/how-it-works/`}>Cómo Funciona</a> te lleva
+        ¿Quieres saber cómo funciona mientras tanto? La guía <a href={`${base}es/how-it-works/`}>Cómo Funciona</a> te lleva
         paso a paso por cada función.
       </p>
     </div>
@@ -100,6 +106,17 @@ const base = import.meta.env.BASE_URL;
     font-weight: 400;
     font-size: var(--fs-xs);
     opacity: 0.8;
+  }
+  .store-badge--pending {
+    /* Tono fijo (no cambia con el tema) — esta insignia se ve
+       intencionalmente "deshabilitada" tanto en modo claro como oscuro. */
+    background: #647069;
+    cursor: default;
+  }
+  .notify-note {
+    margin-top: var(--space-5);
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
   }
   .next-steps {
     max-width: 640px;

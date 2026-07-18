@@ -8,55 +8,62 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout
   lang="en"
   slug="download"
-  title="Download"
-  description="Download CanteraPro free on the App Store or Google Play. No account required to get started."
+  title="Coming Soon"
+  description="CanteraPro is in review with the Apple App Store and about to enter closed testing on Google Play. Download links will appear here the moment it's live."
 >
   <section class="section page-hero">
     <div class="container download-hero">
-      <span class="eyebrow">Download</span>
-      <h1>Get CanteraPro on your phone.</h1>
+      <span class="eyebrow">Coming Soon</span>
+      <h1>CanteraPro is almost here.</h1>
       <p class="page-hero__lede">
-        Free to download, free to use up to 10 clients/jobs/estimates/invoices. No account, no
-        credit card, no setup wizard — install it and start working.
+        We've submitted CanteraPro to the Apple App Store for review, and we're about to open
+        closed testing on Google Play. The real download links will appear right here the moment
+        it's approved — no waitlist signup needed, just check back.
       </p>
 
       <div class="store-badges">
         <!--
-          Replace these placeholders with the official Apple/Google badge assets and your
-          real store listing URLs once the app is live in each store. Official badges:
+          Once the app is approved in each store, replace these two <span> placeholders with
+          real <a href="..."> links to your store listings (and, ideally, the official Apple/
+          Google badge assets). Official badges:
           Apple: https://developer.apple.com/app-store/marketing/guidelines/#section-badges
           Google: https://play.google.com/intl/en_us/badges/
         -->
-        <a href="#" class="store-badge" aria-label="Download on the App Store">
+        <span class="store-badge store-badge--pending" aria-label="Coming soon to the App Store">
           <Icon name="smartphone" size={22} />
           <span>
-            <small>[PLACEHOLDER] Download on the</small>
+            <small>Coming soon to the</small>
             App Store
           </span>
-        </a>
-        <a href="#" class="store-badge" aria-label="Get it on Google Play">
+        </span>
+        <span class="store-badge store-badge--pending" aria-label="Coming soon to Google Play">
           <Icon name="smartphone" size={22} />
           <span>
-            <small>[PLACEHOLDER] Get it on</small>
+            <small>Coming soon to</small>
             Google Play
           </span>
-        </a>
+        </span>
       </div>
+
+      <p class="notify-note">
+        Want to know the moment it's live? <a href="mailto:tier1offgrid@protonmail.com?subject=Notify%20me%20when%20CanteraPro%20launches">Email us</a>
+        and we'll let you know.
+      </p>
     </div>
   </section>
 
   <section class="section section--alt">
     <div class="container next-steps">
-      <h2>What happens next?</h2>
+      <h2>What to expect once it's live</h2>
       <ol>
-        <li>Install CanteraPro from the store link above.</li>
+        <li>Install CanteraPro from the App Store or Google Play.</li>
         <li>Open it — you'll land straight in the app, no sign-up screen.</li>
         <li>Set your language (English or Spanish) in Business Settings, if needed.</li>
         <li>Add your first client and you're off.</li>
       </ol>
       <p>
-        New to the app? The <a href={`${base}en/how-it-works/`}>How It Works</a> guide walks
-        through every feature step by step.
+        Curious how it works in the meantime? The <a href={`${base}en/how-it-works/`}>How It Works</a>
+        guide walks through every feature step by step.
       </p>
     </div>
   </section>
@@ -99,6 +106,17 @@ const base = import.meta.env.BASE_URL;
     font-weight: 400;
     font-size: var(--fs-xs);
     opacity: 0.8;
+  }
+  .store-badge--pending {
+    /* Fixed (non-theme-flipping) muted tone — this badge is intentionally
+       "disabled"-looking in both light and dark mode. */
+    background: #647069;
+    cursor: default;
+  }
+  .notify-note {
+    margin-top: var(--space-5);
+    font-size: var(--fs-sm);
+    color: var(--color-ink-500);
   }
   .next-steps {
     max-width: 640px;
