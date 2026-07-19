@@ -12,7 +12,6 @@ const steps = [
     body: `No hay pantalla de registro. Nada de correo, contraseña, ni un paso de "crear cuenta".
     Instala CanteraPro desde App Store o Google Play, ábrela, y ya estás dentro de la app.
     Funciona igual con señal completa, una sola barra, o en modo avión.`,
-    shot: 'Pantalla de inicio de la app justo después de abrirla por primera vez — sin pantalla de inicio de sesión.',
   },
   {
     icon: 'languages',
@@ -20,7 +19,6 @@ const steps = [
     body: `Ve a Configuración del Negocio y toca el interruptor de idioma para cambiar toda la
     app — cada pantalla, cada formulario, cada PDF que generes — entre inglés y español. Puedes
     cambiar de uno a otro cuantas veces quieras, gratis, para siempre.`,
-    shot: 'Pantalla de Configuración del Negocio con el interruptor de inglés/español resaltado.',
   },
   {
     icon: 'users',
@@ -29,7 +27,6 @@ const steps = [
     correo electrónico y dirección de la propiedad. Una vez guardado, el perfil de este cliente
     reunirá automáticamente cada trabajo, cotización y factura que crees para él — nunca más
     tendrás que buscar su historial.`,
-    shot: 'Pestaña de Clientes mostrando el formulario "Agregar Cliente" con campos de nombre, teléfono, correo y dirección.',
   },
   {
     icon: 'clipboard-list',
@@ -38,7 +35,6 @@ const steps = [
     sobre el trabajo y toma fotos de antes si te sirve. Mientras trabajas, agrega fotos de
     durante y después, y registra los materiales que usaste — esto se vuelve parte del registro
     permanente de ese trabajo.`,
-    shot: 'Pantalla de detalle del trabajo mostrando estado, cuadrícula de fotos, notas y una lista de materiales.',
   },
   {
     icon: 'file-text',
@@ -47,7 +43,6 @@ const steps = [
     obra y materiales. Aplica impuesto o descuento si es necesario. Toca "Exportar PDF" para
     generar una cotización de aspecto profesional, y envíala directamente a tu cliente por
     correo o mensaje de texto desde la misma pantalla.`,
-    shot: 'Pantalla del creador de cotizaciones con partidas, campos de impuesto/descuento y el botón "Exportar PDF".',
   },
   {
     icon: 'receipt',
@@ -56,7 +51,6 @@ const steps = [
     Factura." Cada partida se transfiere automáticamente — sin volver a escribir nada. Cuando
     termine el trabajo, entrégale tu teléfono a tu cliente para que firme, y luego exporta y
     envía la factura en PDF terminada.`,
-    shot: 'Pantalla de factura mostrando el panel de firma digital y el aviso de origen "Convertir a Factura".',
   },
   {
     icon: 'calendar-days',
@@ -64,7 +58,6 @@ const steps = [
     body: `Abre la pestaña de Horario para ver todos tus trabajos organizados por día. Si tienes
     más de una parada, toca "Optimizar Ruta" y CanteraPro te sugerirá el orden más eficiente
     para visitarlas, ahorrándote tiempo de manejo entre trabajos.`,
-    shot: 'Vista de calendario diario con varios trabajos listados y el botón "Optimizar Ruta".',
   },
   {
     icon: 'clock',
@@ -73,7 +66,6 @@ const steps = [
     Salida" cuando te vayas. Agrega una nota rápida si algo afectó tu tiempo — una ida a comprar
     material, una conversación con el cliente, lo que sea. Tus horas se guardan automáticamente
     por trabajo.`,
-    shot: 'Widget del reloj de tiempo en una pantalla de trabajo mostrando un cronómetro activo.',
   },
   {
     icon: 'repeat',
@@ -82,7 +74,6 @@ const steps = [
     quincenal, mantenimiento mensual — abre su perfil y toca "Agregar Cuenta de Mantenimiento."
     Elige la frecuencia y CanteraPro marcará automáticamente la cuenta cuando esté atrasada para
     su próxima visita.`,
-    shot: 'Pantalla de configuración de Cuenta de Mantenimiento con opciones de frecuencia (semanal / quincenal / mensual).',
   },
   {
     icon: 'spray-can',
@@ -90,7 +81,6 @@ const steps = [
     body: `Abre una propiedad y toca "Registrar Aplicación" en Aplicaciones de Productos. Anota
     qué se aplicó y cuándo. CanteraPro da seguimiento automático a la fecha de la próxima
     aplicación, para que siempre sepas cuándo le toca a una propiedad su siguiente tratamiento.`,
-    shot: 'Pantalla de registro de Aplicación de Producto con nombre del producto, fecha de aplicación y próxima fecha.',
   },
   {
     icon: 'calculator',
@@ -99,7 +89,6 @@ const steps = [
     grava, granito decompuesto, arena, roca volcánica, roca de río o concreto triturado — e
     ingresa las dimensiones de tu área. CanteraPro calcula las yardas cúbicas que necesitas,
     agrega un margen de desperdicio del 10% y te da un estimado de costo.`,
-    shot: 'Pantalla de la Calculadora de Materiales con menú de material, campos de dimensiones y el resultado de yardaje y costo.',
   },
   {
     icon: 'route',
@@ -108,7 +97,6 @@ const steps = [
     manejas entre trabajos. Abre el Registro de Millaje cuando quieras para ver tu total mensual
     de forma gratuita. En Pro, toca "Exportar PDF Fiscal" para un reporte listo para presentar,
     con las tarifas de millaje del IRS ya calculadas.`,
-    shot: 'Pantalla del Registro de Millaje mostrando el total mensual y el botón Pro "Exportar PDF Fiscal".',
   },
   {
     icon: 'shield-check',
@@ -118,7 +106,6 @@ const steps = [
     Drive, o envíatelo por correo. Si algún día consigues un teléfono nuevo, instala CanteraPro,
     toca "Restaurar desde Respaldo," elige tu archivo e ingresa tu contraseña para recuperar todo
     exactamente como estaba.`,
-    shot: 'Pantalla de Respaldo y Restauración mostrando los botones "Respaldar Ahora" y "Restaurar desde Respaldo" con un campo de contraseña.',
   },
 ];
 ---
@@ -151,7 +138,6 @@ const steps = [
               </div>
               <h2>{step.title}</h2>
               <p>{step.body}</p>
-              <div class="screenshot-placeholder">[CAPTURA DE PANTALLA: {step.shot}]</div>
             </li>
           ))
         }
@@ -190,15 +176,5 @@ const steps = [
   }
   .howto-step h2 {
     font-size: var(--fs-lg);
-  }
-  .screenshot-placeholder {
-    margin-top: var(--space-4);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-5);
-    color: var(--color-ink-500);
-    font-size: var(--fs-sm);
-    font-style: italic;
-    background: var(--color-surface-50);
   }
 </style>
