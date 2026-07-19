@@ -73,14 +73,16 @@
   --color-surface-0: #ffffff;
   --color-surface-50: #eef6f0;
   --color-surface-100: #e3f0e7;
-  --color-border: #dde6e0;
+  --color-border: #cbdcd2;
 
   --color-success: #2a6e47;
   --color-warning: #c67b1a;
 
   /* Soft green wash behind the page (body background), instead of flat
-     white — layered with the radial tints below in the `body` rule. */
-  --color-page-bg: #f1f7f2;
+     white — layered with the radial tints below in the `body` rule.
+     Deeper than a barely-there tint so white cards/boxes read as
+     distinct surfaces instead of blending into the page. */
+  --color-page-bg: #e3eee6;
 
   /* --- Typography --- */
   --font-sans: 'Ubuntu', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
@@ -110,8 +112,8 @@
   --radius-md: 12px;
   --radius-lg: 20px;
 
-  --shadow-sm: 0 1px 3px rgba(15, 46, 31, 0.08);
-  --shadow-md: 0 8px 24px rgba(15, 46, 31, 0.1);
+  --shadow-sm: 0 1px 3px rgba(15, 46, 31, 0.12);
+  --shadow-md: 0 8px 24px rgba(15, 46, 31, 0.16);
 
   --max-width: 1120px;
 }
@@ -121,15 +123,15 @@
    in whatever mode their phone is already set to. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-surface-0: #12201a;
+    --color-surface-0: #1a2e24;
     --color-surface-50: #16261f;
     --color-surface-100: #1c2e25;
-    --color-border: #2a3d33;
+    --color-border: #34493d;
     --color-ink-900: #f2f6f3;
     --color-ink-700: #d3ddd7;
     --color-ink-500: #a9b7b0;
     --color-ink-300: #7c8b83;
-    --color-page-bg: #0e1a14;
+    --color-page-bg: #0a130e;
   }
 }
 
