@@ -1,4 +1,31 @@
 /* ==========================================================================
+   FONTS
+   Ubuntu, self-hosted from public/fonts/ubuntu/ (Ubuntu Font License 1.0).
+   No external requests or npm font packages — files ship with the site.
+   ========================================================================== */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ubuntu/ubuntu-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ubuntu/ubuntu-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ubuntu/ubuntu-latin-700-normal.woff2') format('woff2');
+}
+
+/* ==========================================================================
    DESIGN TOKENS
    This is the single place to edit CanteraPro's brand colors, type scale,
    and spacing. If you swap in the app's real brand colors later, you only
@@ -42,7 +69,7 @@
   --color-page-bg: #f1f7f2;
 
   /* --- Typography --- */
-  --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Ubuntu', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-display: Georgia, 'Times New Roman', serif;
 
   --fs-xs: 0.8rem;
