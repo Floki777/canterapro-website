@@ -6,9 +6,23 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/ubuntu/ubuntu-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url('/fonts/ubuntu/ubuntu-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ubuntu/ubuntu-latin-400-italic.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Ubuntu';
@@ -70,7 +84,7 @@
 
   /* --- Typography --- */
   --font-sans: 'Ubuntu', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --font-display: Georgia, 'Times New Roman', serif;
+  --font-display: 'Ubuntu', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 
   --fs-xs: 0.8rem;
   --fs-sm: 0.9rem;
