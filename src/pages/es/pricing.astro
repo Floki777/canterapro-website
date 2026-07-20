@@ -130,10 +130,6 @@ const rows = [
         <div class="card founding-tier">
           <h3>Primeros 1,000 cupos</h3>
           <p class="founding-tier__price">$199 <span>de por vida, pago único</span></p>
-          <div class="founding-tier__progress" role="img" aria-label="347 de 1,000 cupos fundadores reclamados">
-            <div class="founding-tier__bar" style="width: 34.7%"></div>
-          </div>
-          <p class="founding-tier__count">347 de 1,000 reclamados*</p>
         </div>
         <div class="card founding-tier">
           <h3>Siguientes 1,000 cupos (1,001–2,000)</h3>
@@ -144,12 +140,6 @@ const rows = [
           <p class="founding-tier__count">Se abre cuando se agoten los primeros 1,000</p>
         </div>
       </div>
-
-      <p class="founding-note">
-        * Valor de referencia — este contador no está conectado a un sistema de ventas en vivo
-        (este es un sitio estático sin servidor). Actualiza este número manualmente conforme
-        lleguen las ventas reales de por vida en App Store / Google Play.
-      </p>
 
       <p>
         Una vez que ambos niveles se agoten, el precio de por vida se cierra de forma permanente
@@ -266,11 +256,6 @@ const rows = [
     font-size: var(--fs-sm);
     color: var(--color-ink-500);
     margin-top: var(--space-2);
-  }
-  .founding-note {
-    font-size: var(--fs-xs);
-    color: var(--color-ink-500);
-    font-style: italic;
   }
   .badge--accent {
     background: var(--color-earth-100);

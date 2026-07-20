@@ -128,10 +128,6 @@ const rows = [
         <div class="card founding-tier">
           <h3>First 1,000 spots</h3>
           <p class="founding-tier__price">$199 <span>lifetime, one time</span></p>
-          <div class="founding-tier__progress" role="img" aria-label="347 of 1,000 founding spots claimed">
-            <div class="founding-tier__bar" style="width: 34.7%"></div>
-          </div>
-          <p class="founding-tier__count">347 of 1,000 claimed*</p>
         </div>
         <div class="card founding-tier">
           <h3>Next 1,000 spots (1,001–2,000)</h3>
@@ -142,12 +138,6 @@ const rows = [
           <p class="founding-tier__count">Opens once the first 1,000 are gone</p>
         </div>
       </div>
-
-      <p class="founding-note">
-        * Placeholder value — this counter is not connected to a live sales feed (this is a
-        static site with no backend). Update this number by hand as real App Store / Google Play
-        lifetime sales come in.
-      </p>
 
       <p>
         Once both tiers are gone, lifetime pricing closes permanently and only the $14.99/month
@@ -264,11 +254,6 @@ const rows = [
     font-size: var(--fs-sm);
     color: var(--color-ink-500);
     margin-top: var(--space-2);
-  }
-  .founding-note {
-    font-size: var(--fs-xs);
-    color: var(--color-ink-500);
-    font-style: italic;
   }
   .badge--accent {
     background: var(--color-earth-100);
