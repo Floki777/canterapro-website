@@ -35,7 +35,7 @@ const t = copy[lang];
       <div class="site-footer__brand">
         <a href={p(lang, '')} class="brand">
           <img src={`${base}icon.png`} alt="" width="28" height="28" class="brand-icon" />
-          <span>CanteraPro</span>
+          <span>Cantera<span class="brand-accent">Pro</span></span>
         </a>
         <p>{t.tagline}</p>
         <a href={`mailto:${t.supportEmail}`} class="cluster">
@@ -95,6 +95,9 @@ const t = copy[lang];
   }
   .site-footer .brand {
     color: #fff;
+  }
+  .site-footer .brand-accent {
+    color: var(--color-accent-500);
   }
   .site-footer__top {
     display: grid;

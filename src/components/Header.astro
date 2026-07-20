@@ -18,7 +18,7 @@ const labels = NAV_LABELS[lang];
   <div class="container site-header__bar">
     <a href={p(lang, '')} class="brand">
       <img src={`${base}icon.png`} alt="" width="32" height="32" class="brand-icon" />
-      <span>CanteraPro</span>
+      <span>Cantera<span class="brand-accent">Pro</span></span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
@@ -65,6 +65,9 @@ const labels = NAV_LABELS[lang];
   .brand-icon {
     border-radius: 50%;
     flex-shrink: 0;
+  }
+  .brand-accent {
+    color: var(--color-accent-500);
   }
   .brand {
     display: inline-flex;
